@@ -1,104 +1,394 @@
-<section id="analysis">
-        <div class="content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Analysis Plan - B&W Theme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Define theme colors: Black & White main, Green accent */
+        :root {
+            --bg-color: #000000;       /* Black background */
+            --text-color: #ffffff;     /* White text */
+            --accent-color: #38a890;   /* Green accent (used sparingly) */
+            --secondary-bg: #1a1a1a; /* Very dark gray for container */
+            --border-color: #333333; /* Dark gray for borders */
+            --code-bg: #222222;      /* Dark gray for code blocks */
+            --table-header-bg: #282828; /* Dark gray for table header */
+            --muted-text-color: #b0b0b0; /* Light gray for muted text */
+        }
+
+        /* Basic body styling */
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        /* Container for centering content */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: var(--secondary-bg);
+            padding: 30px 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Section styling */
+        section {
+            padding: 20px 0;
+            margin-bottom: 25px;
+        }
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Headings */
+        h2 {
+            text-align: center;
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            /* Use accent color for H3 */
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+         h4 {
+            color: var(--text-color);
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+         /* Accent color for placeholder titles */
+        .visual-placeholder h4 {
+             color: var(--accent-color);
+         }
+
+
+        /* Content paragraph styling */
+        p {
+            margin-bottom: 18px;
+        }
+        p small {
+             color: var(--muted-text-color);
+             font-size: 0.9em;
+        }
+
+        /* Code block styling */
+        code {
+            font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
+            background-color: var(--code-bg);
+            color: var(--text-color); /* White text in code blocks */
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            display: block;
+            text-align: left;
+            margin: 15px 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        sub {
+            font-size: 0.7em;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+            bottom: -0.25em;
+        }
+
+        /* Process flow styling */
+        .process-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .process-step {
+            background: transparent;
+            padding: 15px 15px 15px 20px;
+            /* Use accent color for left border highlight */
+            border-left: 3px solid var(--accent-color);
+            border-radius: 0;
+            margin-bottom: 15px;
+            /* Use subtle gray borders */
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+        }
+        /* Use accent color to highlight step title */
+        .process-step strong {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        .process-arrow {
+             text-align: center;
+             margin: 0 0 15px 0;
+             line-height: 1;
+             /* Use accent color for arrow */
+             color: var(--accent-color);
+             font-size: 20px;
+             font-weight: bold;
+         }
+         .process-arrow::after {
+             content: '↓';
+         }
+
+        /* Visual placeholder styling */
+        .visual-placeholder {
+            border: 1px dashed var(--border-color);
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--code-bg); /* Match code background */
+            border-radius: 8px;
+            text-align: center;
+        }
+        .visual-placeholder p {
+            font-style: normal;
+            color: var(--muted-text-color);
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td {
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: middle;
+            color: var(--text-color); /* Ensure table text is white */
+        }
+        thead th {
+            background-color: var(--table-header-bg);
+            color: var(--text-color);
+            font-weight: 600;
+            text-align: center;
+            /* Use accent color for header bottom border */
+            border-bottom: 2px solid var(--accent-color);
+        }
+        tbody tr {
+            background-color: var(--secondary-bg); /* Match container bg */
+        }
+        tbody tr:last-child td {
+             border-bottom: none;
+        }
+        tfoot td {
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85em;
+            color: var(--muted-text-color);
+            text-align: center;
+            padding: 10px;
+        }
+        /* Highlight significance stars/text with accent color */
+        td:last-child { /* Assuming significance is last column */
+             /* color: var(--accent-color); */ /* Optional: Make stars green */
+             font-weight: bold;
+        }
+
+
+        /* SVG styling */
+        svg {
+            display: block;
+            margin: 15px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        svg rect.plot-bg {
+            fill: var(--code-bg); /* Match code background */
+            stroke: var(--border-color);
+            stroke-width: 1;
+        }
+        svg text {
+            font-family: 'Montserrat', sans-serif;
+            fill: var(--text-color); /* White text */
+        }
+        svg text.axis-label {
+            font-size: 11px;
+            fill: var(--muted-text-color); /* Muted gray labels */
+            font-weight: 500;
+        }
+         svg text.tick-label {
+            font-size: 9px;
+            fill: var(--muted-text-color);
+        }
+         /* Use accent color for plot title */
+        svg text.plot-title {
+            font-size: 13px;
+            font-weight: 600;
+            fill: var(--accent-color);
+        }
+        svg line.axis-line {
+            stroke: var(--border-color); /* Gray axis lines */
+            stroke-width: 1;
+        }
+         /* Use accent color for data points */
+        svg circle.data-point {
+            fill: var(--accent-color);
+            opacity: 0.9;
+            stroke: var(--bg-color); /* Use main bg color for stroke contrast */
+            stroke-width: 0.5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <section id="analysis">
             <h2>Analysis Plan</h2>
 
             <h3>Quantitative Analysis: Regression Modeling</h3>
-            <p>Using regression models (e.g., panel regressions) to test the relationship between network structure and resilience indicators across time and ecosystems.</p>
-             <div class="process-flow">
+            <p>
+                Quantitative analysis will utilize panel data regression models to investigate the relationship between VC syndication network structures and ecosystem resilience, particularly during downturns. Resilience indicators (e.g., funding stability, recovery speed) will serve as dependent variables. Key independent variables will include network structure metrics (e.g., density, centrality measures) and their changes during crisis periods, alongside control variables. Interaction terms will be employed specifically to test how network structure moderates the impact of downturns (testing H1-H3).
+            </p>
+            <div class="process-flow">
                 <div class="process-step">
-                    <strong>Model Concept:</strong>
-                     <p><code>Resilience Indicator<sub>e,t</sub> = β<sub>0</sub> + β<sub>1</sub>(Network Metric<sub>e,t-1</sub>) + β<sub>2</sub>(Downturn Dummy<sub>t</sub>) + β<sub>3</sub>(Network Metric<sub>e,t-1</sub> * Downturn Dummy<sub>t</sub>) + Controls<sub>e,t</sub> + ε<sub>e,t</sub></code></p>
-                    <p>Where 'e' is ecosystem, 't' is time period. The interaction term (β<sub>3</sub>) is key to testing how network structure moderates or correlates with resilience *during* a downturn.</p>
+                    <strong>Model Specification (Illustrative for H1):</strong>
+                    <p>To test H1 (fragmentation impact on recovery), a potential model specification is:</p>
+                    <p><code>RecoverySpeed<sub>e,t</sub> = β<sub>0</sub> + β<sub>1</sub>(ΔDensity<sub>e,crisis</sub>) + β<sub>2</sub>(DownturnSeverity<sub>e,t</sub>) + Controls<sub>e,t</sub> + ε<sub>e,t</sub></code></p>
+                    <p><small>
+                        Where: <br>
+                        <em>RecoverySpeed<sub>e,t</sub></em> = Time for funding in ecosystem 'e' to return to trend after downturn 't'.<br>
+                        <em>ΔDensity<sub>e,crisis</sub></em> = Change in network density for ecosystem 'e' during the crisis period (a measure of fragmentation; negative value indicates decreased density/increased fragmentation).<br>
+                        <em>DownturnSeverity<sub>e,t</sub></em> = Measure of the economic shock's intensity.<br>
+                        <em>Controls<sub>e,t</sub></em> = Vector of control variables (e.g., ecosystem size, industry composition, pre-crisis density).<br>
+                        H1 predicts β<sub>1</sub> > 0 (a larger *decrease* in density, i.e., more negative ΔDensity, leads to slower recovery, meaning a positive coefficient relates higher density change to faster recovery).
+                    </small></p>
                 </div>
-                 <div class="process-arrow"></div> <div class="process-step">
+                <div class="process-arrow"></div>
+                <div class="process-step">
                     <strong>Addressing Endogeneity:</strong>
-                    <p>Using lagged independent variables (e.g., network structure *before* a downturn to predict resilience *during* or *after* it). Potential use of Instrumental Variables if applicable.</p>
+                    <p>To address potential endogeneity issues like reverse causality or omitted variables, lagged independent variables (e.g., using pre-crisis network structure or change in density from the *start* of the crisis) will be prioritized. Instrumental variable (IV) techniques will be considered if appropriate instruments related to network changes but not directly to resilience outcomes can be identified.</p>
                 </div>
-                 <div class="process-arrow"></div> <div class="process-step">
-                    <strong>Hypotheses Testing:</strong>
-                    <p>Statistical tests on coefficients (especially β<sub>1</sub> and β<sub>3</sub>) related to specific hypotheses (H1-H3, as mentioned in the plan) about the effects of density, bridging capital, etc., on different resilience dimensions.</p>
-                     <div class="visual-placeholder">
-                         <h4>Mockup Regression Table</h4>
-                         <table>
-                             <thead>
-                                 <tr>
-                                     <th>Variable</th>
-                                     <th>Coefficient</th>
-                                     <th>Standard Error</th>
-                                     <th>t-statistic</th>
-                                     <th>p-value</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 <tr>
-                                     <td>Constant</td>
-                                     <td>1.234</td>
-                                     <td>0.123</td>
-                                     <td>10.01</td>
-                                     <td>0.000</td>
-                                 </tr>
-                                 <tr>
-                                     <td>Pre-Crisis Density</td>
-                                     <td>0.556</td>
-                                     <td>0.089</td>
-                                     <td>6.25</td>
-                                     <td>0.000</td>
-                                 </tr>
-                                 <tr>
-                                     <td>Downturn Dummy</td>
-                                     <td>-0.345</td>
-                                     <td>0.156</td>
-                                     <td>-2.21</td>
-                                     <td>0.028</td>
-                                 </tr>
-                                 <tr>
-                                     <td>Pre-Crisis Density * Downturn Dummy</td>
-                                     <td>0.217</td>
-                                     <td>0.078</td>
-                                     <td>2.79</td>
-                                     <td>0.006</td>
-                                 </tr>
-                                 </tbody>
-                         </table>
-                         <p><em>Note: This is a simplified mock-up using hypothetical data. Actual analysis will include standard errors, robust standard errors, and potentially more variables.</em></p>
-                     </div>
+                <div class="process-arrow"></div>
+                <div class="process-step">
+                    <strong>Hypothesis Testing (H1 Focus):</strong>
+                    <p>
+                        Hypothesis 1 posits that greater network fragmentation (decreased density) during downturns hinders ecosystem resilience (slower recovery). This will be tested by examining the sign, magnitude, and statistical significance of the coefficient β<sub>1</sub> associated with the change in network density (ΔDensity) during the crisis. A statistically significant positive coefficient for β<sub>1</sub> (as defined in the model above) would provide support for H1, indicating that ecosystems maintaining higher density (less fragmentation) exhibit faster funding recovery.
+                    </p>
+                    <div class="visual-placeholder">
+                        <h4>Mockup Regression Results (Testing H1: Funding Recovery Speed)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Coefficient (β)</th>
+                                    <th>Std. Error</th>
+                                    <th>Significance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Intercept (β<sub>0</sub>)</td>
+                                    <td>1.50</td>
+                                    <td>(0.25)</td>
+                                    <td>***</td>
+                                </tr>
+                                <tr>
+                                    <td>Δ Density (During Crisis) (β<sub>1</sub>)</td>
+                                    <td>0.85</td>
+                                    <td>(0.30)</td>
+                                    <td>***</td>
+                                </tr>
+                                <tr>
+                                    <td>Downturn Severity (β<sub>2</sub>)</td>
+                                    <td>0.40</td>
+                                    <td>(0.15)</td>
+                                    <td>**</td>
+                                </tr>
+                                <tr>
+                                    <td>Control: Pre-Crisis Density</td>
+                                    <td>0.10</td>
+                                    <td>(0.08)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Control: Ecosystem Size</td>
+                                    <td>-0.05</td>
+                                    <td>(0.02)</td>
+                                    <td>**</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Significance levels: *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1. Hypothetical data.</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <p><em>This mock table supports H1: The significant positive coefficient for Δ Density suggests that ecosystems experiencing less fragmentation (smaller decrease or increase in density) during a crisis recover funding levels significantly faster.</em></p>
+                    </div>
                 </div>
-            </div>
+            </div> <h3>Qualitative Analysis: Thematic Analysis & Triangulation</h3>
+            <p>
+                Crucially, qualitative thematic analysis of interviews and potential case study data will complement the quantitative findings. This phase explores the underlying mechanisms, contextual factors, and the 'why' behind observed statistical relationships, thereby strengthening causal inference through triangulation.
+            </p>
+            <div class="process-flow">
+                <div class="process-step">
+                    <strong>Step 1: Coding Qualitative Data</strong>
+                    <p>Transcripts and notes will be coded thematically, focusing on experiences related to network changes during crises, syndication behavior shifts, information flow, resource access, and perceived impacts on portfolio companies and overall ecosystem function.</p>
+                </div>
+                <div class="process-arrow"></div>
+                <div class="process-step">
+                    <strong>Step 2: Identifying Mechanisms (H1 Focus)</strong>
+                    <p>Analysis will specifically seek to understand *why* fragmentation might hinder recovery (supporting H1). Themes explored may include reduced access to diverse information, difficulties in coordinating support for startups, breakdown of trust in wider networks, increased search costs for partners, or flight to 'safer' core partners, potentially stranding peripheral actors.</p>
+                </div>
+                <div class="process-arrow"></div>
+                <div class="process-step">
+                    <strong>Step 3: Triangulation</strong>
+                    <p>Qualitative insights regarding the consequences of network fragmentation (or stability) will be compared with the quantitative results (e.g., the significance of β<sub>1</sub> in the H1 model). Congruence between findings will strengthen the interpretation, while divergence may highlight contextual factors or alternative explanations requiring further investigation.</p>
+                    <div class="visual-placeholder">
+                        <h4>Mockup Scatter Plot (Illustrating H1)</h4>
+                        <svg width="350" height="250" viewBox="0 0 350 250">
+                            <rect class="plot-bg" x="40" y="20" width="290" height="180" />
 
-            <h3>Qualitative Analysis: Thematic Analysis & Triangulation</h3>
-            <p>Analyzing interview transcripts and case study data using thematic analysis to identify recurring patterns, challenges, adaptation strategies, and perceived roles of network relationships during crises.</p>
-                 <div class="process-flow">
-                    <div class="process-step">
-                        <strong>Step 1: Coding Qualitative Data</strong>
-                        <p>Identify key themes related to network behavior, crisis impact, decision-making, and resilience factors from interviews.</p>
-                    </div>
-                    <div class="process-arrow"></div> <div class="process-step">
-                        <strong>Step 2: Identifying Underlying Mechanisms & Context</strong>
-                        <p>Explore the 'why' behind the quantitative findings. For example, if density is found to be protective, qualitative data might reveal that dense networks facilitate faster information flow about distressed companies or available follow-on funding.</p>
-                    </div>
-                     <div class="process-arrow"></div> <div class="process-step">
-                        <strong>Step 3: Triangulation</strong>
-                        <p>Comparing and integrating qualitative themes with quantitative results to strengthen causal inference and provide a richer, more nuanced understanding of the complex relationship between network dynamics and ecosystem resilience.</p>
-                         <div class="visual-placeholder">
-                             <h4>Mockup Scatter Plot</h4>
-                             <svg width="300" height="200">
-                                 <rect x="10" y="10" width="280" height="180" fill="lightgray" stroke="gray" stroke-width="1" />
-                                 <text x="150" y="20" text-anchor="middle">Funding Recovery Speed vs. Pre-Crisis Density</text>
-                                 <text x="20" y="190" text-anchor="start">Pre-Crisis Density</text>
-                                 <text x="280" y="190" text-anchor="end">High</text>
-                                 <text x="20" y="190" text-anchor="start">Low</text>
-                                 <text x="150" y="195" text-anchor="middle">Recovery Speed</text>
-                                 <text x="150" y="20" text-anchor="middle">Recovery Speed</text>
-                                 <circle cx="50" cy="150" r="5" fill="blue" />
-                                 <circle cx="75" cy="140" r="5" fill="blue" />
-                                 <circle cx="100" cy="120" r="5" fill="blue" />
-                                 <circle cx="150" cy="90" r="5" fill="blue" />
-                                 <circle cx="200" cy="60" r="5" fill="blue" />
-                                 <circle cx="250" cy="30" r="5" fill="blue" />
-                             </svg>
-                         </div>
-                     </div>
-                 </div>
+                            <circle class="data-point" cx="60" cy="70" r="4" />
+                            <circle class="data-point" cx="80" cy="60" r="4" />
+                            <circle class="data-point" cx="100" cy="90" r="4" />
+                            <circle class="data-point" cx="120" cy="80" r="4" />
+                            <circle class="data-point" cx="150" cy="130" r="4" />
+                            <circle class="data-point" cx="180" cy="120" r="4" />
+                            <circle class="data-point" cx="200" cy="150" r="4" />
+                            <circle class="data-point" cx="220" cy="140" r="4" />
+                            <circle class="data-point" cx="250" cy="180" r="4" />
+                            <circle class="data-point" cx="280" cy="170" r="4" />
+                            <circle class="data-point" cx="300" cy="190" r="4" />
+                            <circle class="data-point" cx="320" cy="180" r="4" />
 
-            </div>
-        </section>
+                            <line class="axis-line" x1="40" y1="200" x2="330" y2="200" /> <line class="axis-line" x1="40" y1="20" x2="40" y2="200" /> <text class="axis-label" x="185" y="230" text-anchor="middle">Network Fragmentation during Crisis (e.g., Decrease in Density)</text>
+                            <text class="tick-label" x="40" y="215" text-anchor="middle">Low Frag.</text>
+                            <text class="tick-label" x="330" y="215" text-anchor="middle">High Frag.</text>
+
+                            <text class="axis-label" x="15" y="110" text-anchor="middle" transform="rotate(-90 15,110)">Funding Recovery Speed</text>
+                            <text class="tick-label" x="35" y="200" text-anchor="end">Slow</text>
+                            <text class="tick-label" x="35" y="30" text-anchor="end">Fast</text>
+
+                            <text class="plot-title" x="185" y="15" text-anchor="middle">H1: Fragmentation & Recovery</text>
+                        </svg>
+                        <p><em>Illustrative plot supporting H1: Ecosystems experiencing greater network fragmentation (larger decrease in density) during a crisis tend to exhibit slower funding recovery speeds.</em></p>
+                    </div>
+                </div>
+            </div> </section> </div> </body>
+</html>
