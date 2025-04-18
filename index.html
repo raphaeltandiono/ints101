@@ -22,9 +22,9 @@
         /* Basic body styling */
         body {
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
+            line-height: 1.6; /* Slightly reduced line-height */
             margin: 0;
-            padding: 20px; /* Adjusted body padding */
+            padding: 20px; /* Reduced body padding */
             background-color: var(--bg-color);
             color: var(--text-color);
             font-weight: 400;
@@ -34,86 +34,83 @@
         .author-info {
             font-size: 0.8em;
             color: var(--muted-text-color);
-            margin-bottom: 20px; /* Space below author info */
-            padding-left: 10px; /* Align with container padding start */
+            margin-bottom: 15px; /* Reduced space below author info */
+            padding-left: 10px;
         }
 
         /* Container for centering content */
         .container {
             max-width: 900px;
             margin: auto;
-            background: var(--bg-color); /* White container background */
-            padding: 30px 40px;
+            background: var(--bg-color);
+            padding: 25px 35px; /* Reduced container padding */
             border-radius: 10px;
-            /* Use accent color for container border */
             border: 1px solid var(--accent-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Subtle shadow */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         /* Section styling */
         section {
-            padding: 20px 0;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border-color); /* Add separator line */
+            padding: 15px 0; /* Reduced section padding */
+            margin-bottom: 20px; /* Reduced space between sections */
+            border-bottom: 1px solid var(--border-color);
         }
         section:last-child {
             margin-bottom: 0;
-            border-bottom: none; /* Remove line after last section */
+            border-bottom: none;
         }
 
         /* Headings */
         h2 {
             text-align: center;
-            color: var(--text-color); /* Black main heading */
+            color: var(--text-color);
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* Reduced space below H2 */
             letter-spacing: 0.5px;
         }
-        /* Use accent color for H3 */
         h3 {
             color: var(--accent-color);
             font-weight: 600;
-            margin-top: 35px;
-            margin-bottom: 20px;
+            margin-top: 30px; /* Reduced space above H3 */
+            margin-bottom: 15px; /* Reduced space below H3 */
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
         }
-         /* Use accent color for H4 */
          h4 {
             color: var(--accent-color);
             font-weight: 500;
-            margin-top: 25px;
-            margin-bottom: 15px;
+            margin-top: 20px; /* Reduced space */
+            margin-bottom: 10px; /* Reduced space */
         }
 
         /* Content paragraph styling */
         p {
-            margin-bottom: 18px;
-            color: #343a40; /* Slightly softer black for paragraphs */
+            margin-bottom: 15px; /* Reduced space */
+            color: #343a40;
         }
         p small {
              color: var(--muted-text-color);
              font-size: 0.9em;
         }
         ul {
-            margin-bottom: 18px;
+            margin-bottom: 15px; /* Reduced space */
             padding-left: 25px;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 6px; /* Reduced space */
         }
 
         /* Code block styling */
         code {
             font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
-            background-color: var(--secondary-bg); /* Light gray background */
-            color: #212529; /* Dark text in code blocks */
-            padding: 10px 15px;
+            background-color: var(--secondary-bg);
+            color: #212529;
+            padding: 8px 12px; /* Reduced padding */
             border-radius: 6px;
             font-size: 0.85em;
             display: block;
             text-align: left;
-            margin: 15px 0;
+            margin: 10px 0; /* Reduced margin */
             overflow-x: auto;
             border: 1px solid var(--border-color);
         }
@@ -132,29 +129,25 @@
             gap: 0;
         }
         .process-step {
-            background: transparent; /* White background */
-            padding: 15px 15px 15px 20px;
-            /* Use accent color for left border highlight */
+            background: transparent;
+            padding: 12px 12px 12px 15px; /* Reduced padding */
             border-left: 3px solid var(--accent-color);
             border-radius: 0;
-            margin-bottom: 15px;
-            /* Use subtle gray borders */
+            margin-bottom: 10px; /* Reduced space */
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             border-right: 1px solid var(--border-color);
         }
-        /* Use accent color to highlight step title */
         .process-step strong {
             color: var(--accent-color);
             font-weight: 600;
         }
         .process-arrow {
              text-align: center;
-             margin: 0 0 15px 0;
+             margin: -5px 0 10px 0; /* Adjusted margin */
              line-height: 1;
-             /* Use accent color for arrow */
              color: var(--accent-color);
-             font-size: 20px;
+             font-size: 18px; /* Slightly smaller arrow */
              font-weight: bold;
          }
          .process-arrow::after {
@@ -163,73 +156,77 @@
 
         /* Visual placeholder styling */
         .visual-placeholder {
-            /* Use accent color for placeholder border */
             border: 1px dashed var(--accent-color);
-            padding: 20px;
-            margin: 25px 0;
-            background-color: var(--secondary-bg); /* Light gray background */
+            padding: 15px; /* Reduced padding */
+            margin: 20px 0; /* Reduced margin */
+            background-color: var(--secondary-bg);
             border-radius: 8px;
             text-align: center;
         }
-         .visual-placeholder h4 { /* Title inside placeholder */
+         .visual-placeholder h4 {
              margin-top: 0;
              text-align: center;
          }
         .visual-placeholder p {
             font-style: normal;
             color: var(--muted-text-color);
-            font-size: 0.9em;
-            margin-top: 15px;
-            text-align: left; /* Align text left inside placeholder */
+            font-size: 0.85em; /* Slightly smaller text */
+            margin-top: 10px;
+            text-align: left;
         }
-         .visual-placeholder code { /* Code inside placeholder */
+         .visual-placeholder code {
              text-align: left;
-             margin-top: 10px;
-             margin-bottom: 10px;
+             margin-top: 8px;
+             margin-bottom: 8px;
          }
-         .visual-placeholder ul { /* List inside placeholder */
+         .visual-placeholder ul {
               text-align: left;
-              font-size: 0.9em;
-              margin-top: 10px;
-              margin-bottom: 10px;
+              font-size: 0.85em;
+              margin-top: 8px;
+              margin-bottom: 8px;
          }
-         .visual-placeholder svg { /* SVG inside placeholder */
-             background-color: #fff; /* White background for clarity */
+         .visual-placeholder svg {
+             background-color: #fff;
              border-radius: 4px;
              padding: 5px;
-             box-sizing: border-box; /* Include padding in size */
+             box-sizing: border-box;
+         }
+         /* Flex container for interaction plots */
+         .plot-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px; /* Add gap between plots */
          }
 
         /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9em;
-            border: 1px solid var(--border-color); /* Gray border around table */
+            margin: 15px 0; /* Reduced margin */
+            font-size: 0.85em; /* Slightly smaller table font */
+            border: 1px solid var(--border-color);
             border-radius: 6px;
             overflow: hidden;
         }
         th, td {
             border: none;
-            border-bottom: 1px solid var(--border-color); /* Horizontal lines only */
-            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 12px; /* Reduced padding */
             text-align: left;
             vertical-align: middle;
-            color: var(--text-color); /* Black table text */
+            color: var(--text-color);
         }
         thead th {
-            background-color: var(--table-header-bg); /* Light gray header */
-            color: var(--text-color); /* Black header text */
+            background-color: var(--table-header-bg);
+            color: var(--text-color);
             font-weight: 600;
             text-align: center;
-             /* Use accent color for header bottom border */
             border-bottom: 2px solid var(--accent-color);
         }
         tbody tr {
-            background-color: var(--bg-color); /* White rows */
+            background-color: var(--bg-color);
         }
-         /* Optional: Zebra striping for light theme */
          tbody tr:nth-child(even) {
             background-color: var(--secondary-bg);
          }
@@ -241,11 +238,9 @@
             font-size: 0.85em;
             color: var(--muted-text-color);
             text-align: center;
-            padding: 10px;
+            padding: 8px; /* Reduced padding */
         }
-        /* Highlight significance stars/text */
         td:last-child {
-             /* color: var(--accent-color); */ /* Optional: Make stars green */
              font-weight: bold;
         }
 
@@ -253,51 +248,49 @@
         /* SVG styling */
         svg {
             display: block;
-            margin: 15px auto;
+            margin: 10px auto; /* Reduced margin */
             max-width: 100%;
             height: auto;
         }
-        svg rect.plot-bg, svg rect.op-bg { /* Background for plot or operationalization viz */
+        svg rect.plot-bg, svg rect.op-bg {
             fill: var(--secondary-bg);
             stroke: var(--border-color);
             stroke-width: 1;
         }
         svg text {
             font-family: 'Montserrat', sans-serif;
-            fill: var(--text-color); /* Black text */
+            fill: var(--text-color);
         }
         svg text.axis-label, svg text.op-label {
-            font-size: 11px;
-            fill: var(--muted-text-color); /* Muted gray labels */
+            font-size: 10px; /* Smaller */
+            fill: var(--muted-text-color);
             font-weight: 500;
         }
          svg text.tick-label, svg text.op-value {
-            font-size: 9px;
+            font-size: 8px; /* Smaller */
             fill: var(--muted-text-color);
         }
-         /* Use accent color for plot title */
         svg text.plot-title, svg text.op-title {
-            font-size: 13px;
+            font-size: 12px; /* Smaller */
             font-weight: 600;
             fill: var(--accent-color);
         }
         svg line.axis-line, svg line.op-line {
-            stroke: var(--muted-text-color); /* Use muted gray for axis/viz lines */
+            stroke: var(--muted-text-color);
             stroke-width: 1;
         }
-         /* Use accent color for data points */
         svg circle.data-point, svg circle.op-node {
             fill: var(--accent-color);
             opacity: 0.8;
-            stroke: var(--bg-color); /* White stroke for contrast */
+            stroke: var(--bg-color);
             stroke-width: 0.5px;
         }
-        svg line.op-tie { /* Style for ties in network viz */
+        svg line.op-tie {
              stroke: var(--accent-color);
              stroke-width: 1.5px;
              opacity: 0.6;
         }
-         svg path.op-path { /* Style for paths in viz */
+         svg path.op-path {
              stroke: var(--accent-color);
              stroke-width: 2px;
              fill: none;
@@ -306,12 +299,12 @@
 
         /* Disclaimer Styling */
         .disclaimer {
-            font-size: 0.8em;
+            font-size: 0.75em; /* Smaller */
             color: var(--muted-text-color);
             text-align: center;
-            margin-top: 40px; /* More space above disclaimer */
+            margin-top: 30px; /* Reduced space */
             border-top: 1px solid var(--border-color);
-            padding-top: 20px; /* Space below line */
+            padding-top: 15px; /* Reduced space */
         }
 
     </style>
@@ -330,53 +323,51 @@
 
             <div class="visual-placeholder">
                 <h4>H1: Network Fragmentation (Density) & Recovery Speed</h4>
-                <p>Fragmentation is measured by the change in network density (ΔDensity) during a crisis. Recovery Speed measures time for funding to return to trend.</p>
-                <svg width="200" height="100" viewBox="0 0 200 100">
-                     <rect class="op-bg" x="5" y="5" width="190" height="90" />
-                     <text class="op-title" x="100" y="20" text-anchor="middle">Density & Recovery Viz</text>
-                     <text class="op-label" x="10" y="40">Density Calc:</text>
-                     <text class="op-value" x="15" y="55">Actual/Possible Ties</text>
-                     <text class="op-label" x="10" y="75">Recovery Speed:</text>
-                     <text class="op-value" x="15" y="90">Time (Quarters)</text>
-                     <line class="op-line" x1="100" y1="30" x2="100" y2="90"/>
-                     <text class="op-label" x="110" y="40">ΔDensity:</text>
-                     <text class="op-value" x="115" y="55">Density[Crisis] -</text>
-                     <text class="op-value" x="115" y="65">Density[Pre]</text>
-                </svg>
+                <p>Fragmentation measured by ΔDensity (change in density). Recovery Speed measures time for funding to return to trend.</p>
+                <svg width="220" height="110" viewBox="0 0 220 110">
+                     <rect class="op-bg" x="5" y="5" width="210" height="100" />
+                     <text class="op-title" x="110" y="20" text-anchor="middle">Density & Recovery Viz</text>
+                     <text class="op-label" x="15" y="40" text-anchor="start">Density Calc:</text>
+                     <text class="op-value" x="20" y="55" text-anchor="start">Actual/Possible Ties</text>
+                     <text class="op-label" x="15" y="75" text-anchor="start">Recovery Speed:</text>
+                     <text class="op-value" x="20" y="90" text-anchor="start">Time (Quarters)</text>
+                     <line class="op-line" x1="105" y1="30" x2="105" y2="100"/> <text class="op-label" x="115" y="40" text-anchor="start">ΔDensity:</text>
+                     <text class="op-value" x="120" y="55" text-anchor="start">Density[Crisis] -</text>
+                     <text class="op-value" x="120" y="68" text-anchor="start">Density[Pre]</text> </svg>
                 <code>ΔDensity (Crisis) = Density[t_crisis] - Density[t_pre-crisis]</code>
                 <p>Recovery speed measured via time-series analysis of funding volume.</p>
             </div>
 
             <div class="visual-placeholder">
                 <h4>H2: Bridging Capital & Early-Stage Resilience</h4>
-                <p>Bridging capital can be measured using metrics like average node betweenness centrality (how often VCs lie on shortest paths between others) or network constraint. Early-stage resilience can be the % change in early-stage deal volume during the downturn.</p>
-                 <svg width="200" height="100" viewBox="0 0 200 100">
-                     <rect class="op-bg" x="5" y="5" width="190" height="90" />
+                <p>Bridging capital measured via Betweenness Centrality. Early-stage resilience via %Δ in deal volume.</p>
+                 <svg width="200" height="110" viewBox="0 0 200 110">
+                     <rect class="op-bg" x="5" y="5" width="190" height="100" />
                      <text class="op-title" x="100" y="20" text-anchor="middle">Bridging Capital (Betweenness)</text>
-                     <circle class="op-node" cx="30" cy="40" r="6"/> <circle class="op-node" cx="30" cy="70" r="6"/>
-                     <circle class="op-node" cx="100" cy="55" r="8" stroke="var(--accent-color)" stroke-width="2"/> <circle class="op-node" cx="170" cy="40" r="6"/> <circle class="op-node" cx="170" cy="70" r="6"/>
-                     <line class="op-tie" x1="30" y1="40" x2="100" y2="55"/> <line class="op-tie" x1="30" y1="70" x2="100" y2="55"/>
-                     <line class="op-tie" x1="170" y1="40" x2="100" y2="55"/> <line class="op-tie" x1="170" y1="70" x2="100" y2="55"/>
-                     <text class="op-label" x="100" y="85" text-anchor="middle">High Betweenness VC (Bridge)</text>
-                 </svg>
+                     <circle class="op-node" cx="30" cy="45" r="6"/> <circle class="op-node" cx="30" cy="75" r="6"/>
+                     <circle class="op-node" cx="100" cy="60" r="8" stroke="var(--accent-color)" stroke-width="2"/>
+                     <circle class="op-node" cx="170" cy="45" r="6"/> <circle class="op-node" cx="170" cy="75" r="6"/>
+                     <line class="op-tie" x1="30" y1="45" x2="100" y2="60"/> <line class="op-tie" x1="30" y1="75" x2="100" y2="60"/>
+                     <line class="op-tie" x1="170" y1="45" x2="100" y2="60"/> <line class="op-tie" x1="170" y1="75" x2="100" y2="60"/>
+                     <text class="op-label" x="100" y="95" text-anchor="middle">High Betweenness VC (Bridge)</text> </svg>
                 <code>EarlyStageResilience = %Δ(Early Stage Deals Volume [Crisis])</code>
                 <p>Higher average betweenness indicates more bridging capital.</p>
             </div>
 
             <div class="visual-placeholder">
                 <h4>H3: Centralization & Late-Stage Stability</h4>
-                <p>Network centralization can be measured by degree centralization (variance in number of ties) or core density (density among the most connected VCs). Late-stage stability is the deviation from trend in late-stage funding volume.</p>
-                 <svg width="200" height="100" viewBox="0 0 200 100">
-                     <rect class="op-bg" x="5" y="5" width="190" height="90" />
+                <p>Centralization measured via degree centralization or core density. Late-stage stability via deviation from trend.</p>
+                 <svg width="200" height="110" viewBox="0 0 200 110">
+                     <rect class="op-bg" x="5" y="5" width="190" height="100" />
                      <text class="op-title" x="100" y="20" text-anchor="middle">Centralized Network (Core)</text>
-                     <circle class="op-node" cx="80" cy="55" r="8" stroke="var(--accent-color)" stroke-width="2"/>
-                     <circle class="op-node" cx="120" cy="55" r="8" stroke="var(--accent-color)" stroke-width="2"/>
-                     <circle class="op-node" cx="40" cy="30" r="6"/> <circle class="op-node" cx="40" cy="80" r="6"/>
-                     <circle class="op-node" cx="160" cy="30" r="6"/> <circle class="op-node" cx="160" cy="80" r="6"/>
-                     <line class="op-tie" x1="80" y1="55" x2="120" y2="55"/> <line class="op-tie" x1="40" y1="30" x2="80" y2="55"/> <line class="op-tie" x1="40" y1="80" x2="80" y2="55"/>
-                     <line class="op-tie" x1="160" y1="30" x2="120" y2="55"/> <line class="op-tie" x1="160" y1="80" x2="120" y2="55"/>
-                     <text class="op-label" x="100" y="85" text-anchor="middle">Dense Core, Peripheral Nodes</text>
-                 </svg>
+                     <circle class="op-node" cx="80" cy="60" r="8" stroke="var(--accent-color)" stroke-width="2"/>
+                     <circle class="op-node" cx="120" cy="60" r="8" stroke="var(--accent-color)" stroke-width="2"/>
+                     <circle class="op-node" cx="40" cy="35" r="6"/> <circle class="op-node" cx="40" cy="85" r="6"/>
+                     <circle class="op-node" cx="160" cy="35" r="6"/> <circle class="op-node" cx="160" cy="85" r="6"/>
+                     <line class="op-tie" x1="80" y1="60" x2="120" y2="60"/>
+                     <line class="op-tie" x1="40" y1="35" x2="80" y2="60"/> <line class="op-tie" x1="40" y1="85" x2="80" y2="60"/>
+                     <line class="op-tie" x1="160" y1="35" x2="120" y2="60"/> <line class="op-tie" x1="160" y1="85" x2="120" y2="60"/>
+                     <text class="op-label" x="100" y="95" text-anchor="middle">Dense Core, Peripheral Nodes</text> </svg>
                  <code>LateStageStability = Deviation(Late Stage Funding Volume [Crisis])</code>
                  <p>Higher centralization indicates dominance by a few VCs.</p>
             </div>
@@ -406,10 +397,10 @@
                         <li>
                             <strong>H3 (Centralization & Late-Stage):</strong>
                             <code>LateStageStability = β<sub>0</sub> + β<sub>1</sub>(Centralization<sub>pre</sub>) + β<sub>2</sub>(Downturn * Centralization<sub>pre</sub>) + Controls + ε</code>
-                            <small>(Predict β<sub>1</sub> > 0 or β<sub>2</sub> > 0, depending on interaction framing)</small>
+                            <small>(Predict β<sub>1</sub> > 0 or β<sub>2</sub> > 0)</small>
                         </li>
                     </ul>
-                     <p><small>Subscripts for ecosystem (e) and time (t) omitted for brevity. 'pre' indicates pre-crisis measure.</small></p>
+                     <p><small>Subscripts omitted for brevity. 'pre' indicates pre-crisis measure.</small></p>
                 </div>
                 <div class="process-arrow"></div>
 
@@ -477,22 +468,28 @@
                     </div>
                      <div class="visual-placeholder">
                          <h4>Mockup Interaction Plots (Conceptual)</h4>
-                         <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-                             <svg width="250" height="180" viewBox="0 0 250 180" style="margin: 5px;">
-                                 <rect class="plot-bg" x="5" y="5" width="240" height="170" />
-                                 <text class="plot-title" x="125" y="20" text-anchor="middle">H2: Bridging & Early-Stage</text>
-                                 <line class="axis-line" x1="30" y1="150" x2="220" y2="150" /> <text class="tick-label" x="30" y="165" text-anchor="middle">Normal</text> <text class="tick-label" x="220" y="165" text-anchor="middle">Downturn</text>
-                                 <line class="axis-line" x1="30" y1="30" x2="30" y2="150" /> <text class="tick-label" x="25" y="150" text-anchor="end">Low</text> <text class="tick-label" x="25" y="40" text-anchor="end">High</text> <text class="axis-label" x="15" y="90" transform="rotate(-90 15,90)" text-anchor="middle">Early Stage Activity</text>
-                                 <line x1="50" y1="60" x2="200" y2="120" stroke="var(--accent-color)" stroke-width="2"/> <text class="op-value" x="205" y="115" fill="var(--accent-color)">High Bridging</text>
-                                 <line x1="50" y1="50" x2="200" y2="140" stroke="var(--muted-text-color)" stroke-width="2" stroke-dasharray="4 2"/> <text class="op-value" x="205" y="145" fill="var(--muted-text-color)">Low Bridging</text>
+                         <div class="plot-container">
+                             <svg width="260" height="200" viewBox="0 0 260 200" style="margin: 5px;">
+                                 <rect class="plot-bg" x="5" y="5" width="250" height="190" />
+                                 <text class="plot-title" x="130" y="25" text-anchor="middle">H2: Bridging & Early-Stage</text>
+                                 <line class="axis-line" x1="40" y1="160" x2="230" y2="160" />
+                                 <text class="tick-label" x="40" y="175" text-anchor="middle">Normal</text> <text class="tick-label" x="230" y="175" text-anchor="middle">Downturn</text>
+                                 <line class="axis-line" x1="40" y1="40" x2="40" y2="160" />
+                                 <text class="tick-label" x="35" y="160" text-anchor="end">Low</text> <text class="tick-label" x="35" y="50" text-anchor="end">High</text>
+                                 <text class="axis-label" x="20" y="100" transform="rotate(-90 20,100)" text-anchor="middle">Early Stage Activity</text>
+                                 <line x1="60" y1="70" x2="210" y2="130" stroke="var(--accent-color)" stroke-width="2"/> <text class="op-value" x="135" y="95" fill="var(--accent-color)">High Bridging</text>
+                                 <line x1="60" y1="60" x2="210" y2="150" stroke="var(--muted-text-color)" stroke-width="2" stroke-dasharray="4 2"/> <text class="op-value" x="135" y="115" fill="var(--muted-text-color)">Low Bridging</text>
                              </svg>
-                             <svg width="250" height="180" viewBox="0 0 250 180" style="margin: 5px;">
-                                 <rect class="plot-bg" x="5" y="5" width="240" height="170" />
-                                 <text class="plot-title" x="125" y="20" text-anchor="middle">H3: Centralization & Late-Stage</text>
-                                 <line class="axis-line" x1="30" y1="150" x2="220" y2="150" /> <text class="tick-label" x="30" y="165" text-anchor="middle">Normal</text> <text class="tick-label" x="220" y="165" text-anchor="middle">Downturn</text>
-                                 <line class="axis-line" x1="30" y1="30" x2="30" y2="150" /> <text class="tick-label" x="25" y="150" text-anchor="end">Low</text> <text class="tick-label" x="25" y="40" text-anchor="end">High</text> <text class="axis-label" x="15" y="90" transform="rotate(-90 15,90)" text-anchor="middle">Late Stage Stability</text>
-                                 <line x1="50" y1="60" x2="200" y2="80" stroke="var(--accent-color)" stroke-width="2"/> <text class="op-value" x="205" y="75" fill="var(--accent-color)">High Centraliz.</text>
-                                 <line x1="50" y1="70" x2="200" y2="130" stroke="var(--muted-text-color)" stroke-width="2" stroke-dasharray="4 2"/> <text class="op-value" x="205" y="135" fill="var(--muted-text-color)">Low Centraliz.</text>
+                             <svg width="260" height="200" viewBox="0 0 260 200" style="margin: 5px;">
+                                 <rect class="plot-bg" x="5" y="5" width="250" height="190" />
+                                 <text class="plot-title" x="130" y="25" text-anchor="middle">H3: Centralization & Late-Stage</text>
+                                 <line class="axis-line" x1="40" y1="160" x2="230" y2="160" />
+                                 <text class="tick-label" x="40" y="175" text-anchor="middle">Normal</text> <text class="tick-label" x="230" y="175" text-anchor="middle">Downturn</text>
+                                 <line class="axis-line" x1="40" y1="40" x2="40" y2="160" />
+                                 <text class="tick-label" x="35" y="160" text-anchor="end">Low</text> <text class="tick-label" x="35" y="50" text-anchor="end">High</text>
+                                 <text class="axis-label" x="20" y="100" transform="rotate(-90 20,100)" text-anchor="middle">Late Stage Stability</text>
+                                 <line x1="60" y1="70" x2="210" y2="90" stroke="var(--accent-color)" stroke-width="2"/> <text class="op-value" x="135" y="75" fill="var(--accent-color)">High Centraliz.</text>
+                                 <line x1="60" y1="80" x2="210" y2="140" stroke="var(--muted-text-color)" stroke-width="2" stroke-dasharray="4 2"/> <text class="op-value" x="135" y="120" fill="var(--muted-text-color)">Low Centraliz.</text>
                              </svg>
                          </div>
                          <p><em>Conceptual plots showing how high bridging capital (H2) or high centralization (H3) might mitigate the negative impact of downturns compared to low levels.</em></p>
@@ -521,8 +518,11 @@
                         <svg width="350" height="250" viewBox="0 0 350 250">
                             <rect class="plot-bg" x="40" y="20" width="290" height="180" />
                             <circle class="data-point" cx="60" cy="70" r="4" /> <circle class="data-point" cx="80" cy="60" r="4" /> <circle class="data-point" cx="100" cy="90" r="4" /> <circle class="data-point" cx="120" cy="80" r="4" /> <circle class="data-point" cx="150" cy="130" r="4" /> <circle class="data-point" cx="180" cy="120" r="4" /> <circle class="data-point" cx="200" cy="150" r="4" /> <circle class="data-point" cx="220" cy="140" r="4" /> <circle class="data-point" cx="250" cy="180" r="4" /> <circle class="data-point" cx="280" cy="170" r="4" /> <circle class="data-point" cx="300" cy="190" r="4" /> <circle class="data-point" cx="320" cy="180" r="4" />
-                            <line class="axis-line" x1="40" y1="200" x2="330" y2="200" /> <line class="axis-line" x1="40" y1="20" x2="40" y2="200" /> <text class="axis-label" x="185" y="230" text-anchor="middle">Network Fragmentation during Crisis (e.g., Decrease in Density)</text> <text class="tick-label" x="40" y="215" text-anchor="middle">Low Frag.</text> <text class="tick-label" x="330" y="215" text-anchor="middle">High Frag.</text>
-                            <text class="axis-label" x="15" y="110" text-anchor="middle" transform="rotate(-90 15,110)">Funding Recovery Speed</text> <text class="tick-label" x="35" y="200" text-anchor="end">Slow</text> <text class="tick-label" x="35" y="30" text-anchor="end">Fast</text>
+                            <line class="axis-line" x1="40" y1="200" x2="330" y2="200" /> <line class="axis-line" x1="40" y1="20" x2="40" y2="200" />
+                            <text class="axis-label" x="185" y="230" text-anchor="middle">Network Fragmentation during Crisis</text>
+                            <text class="tick-label" x="40" y="215" text-anchor="middle">Low Frag.</text> <text class="tick-label" x="330" y="215" text-anchor="middle">High Frag.</text>
+                            <text class="axis-label" x="15" y="110" text-anchor="middle" transform="rotate(-90 15,110)">Funding Recovery Speed</text>
+                            <text class="tick-label" x="35" y="200" text-anchor="end">Slow</text> <text class="tick-label" x="35" y="30" text-anchor="end">Fast</text>
                             <text class="plot-title" x="185" y="15" text-anchor="middle">H1: Fragmentation & Recovery</text>
                         </svg>
                         <p><em>Illustrative plot supporting H1. Similar plots would be generated for H2 and H3 relationships.</em></p>
