@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Analysis Plan - B&W Theme</title>
+    <title>Research Analysis Plan - Light Theme / Dark Green Accent</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Define theme colors: Black & White main, Green accent */
+        /* Define theme colors: White/Black main, Dark Emerald Green accent */
         :root {
-            --bg-color: #000000;       /* Black background */
-            --text-color: #ffffff;     /* White text */
-            --accent-color: #38a890;   /* Green accent (used sparingly) */
-            --secondary-bg: #1a1a1a; /* Very dark gray for container */
-            --border-color: #333333; /* Dark gray for borders */
-            --code-bg: #222222;      /* Dark gray for code blocks */
-            --table-header-bg: #282828; /* Dark gray for table header */
-            --muted-text-color: #b0b0b0; /* Light gray for muted text */
+            --bg-color: #ffffff;       /* White background */
+            --text-color: #000000;     /* Black text */
+            /* Updated Accent Color */
+            --accent-color: #006A4E;   /* Dark Emerald Green accent */
+            --secondary-bg: #f8f9fa; /* Very light gray for container/code */
+            --border-color: #dee2e6; /* Light gray for borders */
+            --table-header-bg: #e9ecef; /* Light gray for table header */
+            --muted-text-color: #6c757d; /* Standard muted gray text */
         }
 
         /* Basic body styling */
@@ -35,10 +35,12 @@
         .container {
             max-width: 900px;
             margin: auto;
-            background: var(--secondary-bg);
+            background: var(--bg-color); /* White container background */
             padding: 30px 40px;
             border-radius: 10px;
-            border: 1px solid var(--border-color);
+            /* Use accent color for container border */
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Subtle shadow */
         }
 
         /* Section styling */
@@ -53,13 +55,13 @@
         /* Headings */
         h2 {
             text-align: center;
-            color: var(--text-color);
+            color: var(--text-color); /* Black main heading */
             font-weight: 600;
             margin-bottom: 40px;
             letter-spacing: 0.5px;
         }
+        /* Use accent color for H3 */
         h3 {
-            /* Use accent color for H3 */
             color: var(--accent-color);
             font-weight: 600;
             margin-top: 35px;
@@ -67,21 +69,18 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
         }
+         /* Use accent color for H4 */
          h4 {
-            color: var(--text-color);
+            color: var(--accent-color);
             font-weight: 500;
             margin-top: 25px;
             margin-bottom: 15px;
         }
-         /* Accent color for placeholder titles */
-        .visual-placeholder h4 {
-             color: var(--accent-color);
-         }
-
 
         /* Content paragraph styling */
         p {
             margin-bottom: 18px;
+            color: #343a40; /* Slightly softer black for paragraphs */
         }
         p small {
              color: var(--muted-text-color);
@@ -91,8 +90,8 @@
         /* Code block styling */
         code {
             font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
-            background-color: var(--code-bg);
-            color: var(--text-color); /* White text in code blocks */
+            background-color: var(--secondary-bg); /* Light gray background */
+            color: #212529; /* Dark text in code blocks */
             padding: 10px 15px;
             border-radius: 6px;
             font-size: 0.85em;
@@ -117,7 +116,7 @@
             gap: 0;
         }
         .process-step {
-            background: transparent;
+            background: transparent; /* White background */
             padding: 15px 15px 15px 20px;
             /* Use accent color for left border highlight */
             border-left: 3px solid var(--accent-color);
@@ -148,10 +147,11 @@
 
         /* Visual placeholder styling */
         .visual-placeholder {
-            border: 1px dashed var(--border-color);
+            /* Use accent color for placeholder border */
+            border: 1px dashed var(--accent-color);
             padding: 20px;
             margin: 25px 0;
-            background-color: var(--code-bg); /* Match code background */
+            background-color: var(--secondary-bg); /* Light gray background */
             border-radius: 8px;
             text-align: center;
         }
@@ -168,29 +168,33 @@
             border-collapse: collapse;
             margin: 20px 0;
             font-size: 0.9em;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-color); /* Gray border around table */
             border-radius: 6px;
             overflow: hidden;
         }
         th, td {
             border: none;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color); /* Horizontal lines only */
             padding: 12px 15px;
             text-align: left;
             vertical-align: middle;
-            color: var(--text-color); /* Ensure table text is white */
+            color: var(--text-color); /* Black table text */
         }
         thead th {
-            background-color: var(--table-header-bg);
-            color: var(--text-color);
+            background-color: var(--table-header-bg); /* Light gray header */
+            color: var(--text-color); /* Black header text */
             font-weight: 600;
             text-align: center;
-            /* Use accent color for header bottom border */
+             /* Use accent color for header bottom border */
             border-bottom: 2px solid var(--accent-color);
         }
         tbody tr {
-            background-color: var(--secondary-bg); /* Match container bg */
+            background-color: var(--bg-color); /* White rows */
         }
+         /* Optional: Zebra striping for light theme */
+         tbody tr:nth-child(even) {
+            background-color: var(--secondary-bg);
+         }
         tbody tr:last-child td {
              border-bottom: none;
         }
@@ -201,8 +205,8 @@
             text-align: center;
             padding: 10px;
         }
-        /* Highlight significance stars/text with accent color */
-        td:last-child { /* Assuming significance is last column */
+        /* Highlight significance stars/text */
+        td:last-child {
              /* color: var(--accent-color); */ /* Optional: Make stars green */
              font-weight: bold;
         }
@@ -216,13 +220,13 @@
             height: auto;
         }
         svg rect.plot-bg {
-            fill: var(--code-bg); /* Match code background */
+            fill: var(--secondary-bg); /* Light gray plot background */
             stroke: var(--border-color);
             stroke-width: 1;
         }
         svg text {
             font-family: 'Montserrat', sans-serif;
-            fill: var(--text-color); /* White text */
+            fill: var(--text-color); /* Black text */
         }
         svg text.axis-label {
             font-size: 11px;
@@ -240,14 +244,14 @@
             fill: var(--accent-color);
         }
         svg line.axis-line {
-            stroke: var(--border-color); /* Gray axis lines */
+            stroke: var(--muted-text-color); /* Use muted gray for axis lines */
             stroke-width: 1;
         }
          /* Use accent color for data points */
         svg circle.data-point {
             fill: var(--accent-color);
-            opacity: 0.9;
-            stroke: var(--bg-color); /* Use main bg color for stroke contrast */
+            opacity: 0.8;
+            stroke: var(--bg-color); /* White stroke for contrast */
             stroke-width: 0.5px;
         }
 
