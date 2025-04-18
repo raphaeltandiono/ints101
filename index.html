@@ -179,6 +179,12 @@
              margin-top: 10px;
              margin-bottom: 10px;
          }
+         .visual-placeholder ul { /* List inside placeholder */
+              text-align: left;
+              font-size: 0.9em;
+              margin-top: 10px;
+              margin-bottom: 10px;
+         }
          .visual-placeholder svg { /* SVG inside placeholder */
              background-color: #fff; /* White background for clarity */
              border-radius: 4px;
@@ -364,15 +370,33 @@
                     </small></p>
                 </div>
                 <div class="process-arrow"></div>
+
                 <div class="process-step">
                     <strong>Addressing Endogeneity:</strong>
-                    <p>To address potential endogeneity issues like reverse causality or omitted variables, lagged independent variables (e.g., using pre-crisis network structure or change in density from the *start* of the crisis) will be prioritized. Instrumental variable (IV) techniques will be considered if appropriate instruments related to network changes but not directly to resilience outcomes can be identified.</p>
+                    <p>To address potential endogeneity issues (e.g., reverse causality or omitted variables biasing the estimate of β<sub>1</sub>), the primary strategy is using lagged independent variables. Additionally, instrumental variable (IV) techniques will be explored. Before employing IV, endogeneity of the key variable (ΔDensity) will be formally tested.</p>
+                    <div class="visual-placeholder">
+                        <h4>Endogeneity Test for ΔDensity (Conceptual Example)</h4>
+                        <p>One common approach is the Durbin-Wu-Hausman test (regression form):</p>
+                        <ul>
+                            <li><strong>Step 1 (First Stage):</strong> Regress the potentially endogenous variable (ΔDensity) on valid instrumental variables (Z) and all exogenous regressors (X) from the main model. A valid instrument (Z) must be correlated with ΔDensity but uncorrelated with the error term (ε) in the RecoverySpeed equation. (Finding valid instruments is a key challenge; e.g., Z could be related to historical regulatory changes affecting syndication propensity but not directly recovery speed).
+                                <code>ΔDensity = γ<sub>0</sub> + γ<sub>1</sub>Z + γ<sub>2</sub>X + u</code>
+                            </li>
+                            <li><strong>Step 2:</strong> Obtain the residuals (û) from the first-stage regression. These residuals represent the portion of ΔDensity not explained by the instruments and exogenous variables.</li>
+                            <li><strong>Step 3 (Test Stage):</strong> Include these residuals (û) in the original RecoverySpeed regression:
+                                <code>RecoverySpeed = β<sub>0</sub> + β<sub>1</sub>ΔDensity + β<sub>2</sub>û + Controls + ε</code>
+                            </li>
+                            <li><strong>Step 4 (Interpretation):</strong> Test the statistical significance of β<sub>2</sub>. If β<sub>2</sub> is significantly different from zero, we reject the null hypothesis that ΔDensity is exogenous.</li>
+                        </ul>
+                         <code>Mock Test Result: t-statistic for β<sub>2</sub> = 2.58 (p = 0.011)</code>
+                         <p><em>Interpretation: The coefficient on the first-stage residuals (β<sub>2</sub>) is statistically significant (p < 0.05). This suggests that ΔDensity is likely endogenous in the RecoverySpeed model, warranting the use of IV estimation (if valid instruments are available) or cautious interpretation of OLS results.</em></p>
+                    </div>
                 </div>
+
                 <div class="process-arrow"></div>
                 <div class="process-step">
                     <strong>Hypothesis Testing (H1 Focus):</strong>
                     <p>
-                        Hypothesis 1 posits that greater network fragmentation (decreased density) during downturns hinders ecosystem resilience (slower recovery). This will be tested by examining the sign, magnitude, and statistical significance of the coefficient β<sub>1</sub> associated with the change in network density (ΔDensity) during the crisis. A statistically significant positive coefficient for β<sub>1</sub> (as defined in the model above) would provide support for H1, indicating that ecosystems maintaining higher density (less fragmentation) exhibit faster funding recovery.
+                        Hypothesis 1 posits that greater network fragmentation (decreased density) during downturns hinders ecosystem resilience (slower recovery). Assuming endogeneity is addressed (e.g., via IV), this is tested by examining the sign, magnitude, and statistical significance of the coefficient β<sub>1</sub> on ΔDensity. A statistically significant positive coefficient would support H1.
                     </p>
                     <div class="visual-placeholder">
                         <h4>Mockup Regression Results (Testing H1: Funding Recovery Speed)</h4>
@@ -415,7 +439,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="4">Significance levels: *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1. Hypothetical data.</td>
+                                    <td colspan="4">Significance levels: *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1. Hypothetical data. Results assume endogeneity addressed.</td>
                                 </tr>
                             </tfoot>
                         </table>
