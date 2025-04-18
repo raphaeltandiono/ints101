@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Procedure, Analysis & Conclusion - H1 Focus</title>
+    <title>Research Procedure, Analysis & Conclusion - H1-H3 Focus</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,10 +24,18 @@
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.7;
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px; /* Adjusted body padding */
             background-color: var(--bg-color);
             color: var(--text-color);
             font-weight: 400;
+        }
+
+        /* Author Info Styling */
+        .author-info {
+            font-size: 0.8em;
+            color: var(--muted-text-color);
+            margin-bottom: 20px; /* Space below author info */
+            padding-left: 10px; /* Align with container padding start */
         }
 
         /* Container for centering content */
@@ -189,6 +197,7 @@
              background-color: #fff; /* White background for clarity */
              border-radius: 4px;
              padding: 5px;
+             box-sizing: border-box; /* Include padding in size */
          }
 
         /* Table styling */
@@ -288,64 +297,88 @@
              stroke-width: 1.5px;
              opacity: 0.6;
         }
+         svg path.op-path { /* Style for paths in viz */
+             stroke: var(--accent-color);
+             stroke-width: 2px;
+             fill: none;
+             opacity: 0.7;
+         }
+
+        /* Disclaimer Styling */
+        .disclaimer {
+            font-size: 0.8em;
+            color: var(--muted-text-color);
+            text-align: center;
+            margin-top: 40px; /* More space above disclaimer */
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px; /* Space below line */
+        }
 
     </style>
 </head>
 <body>
+
+    <div class="author-info">Raphael Tandiono | 01468826</div>
 
     <div class="container">
 
         <section id="procedure">
             <h2>Procedure & Operationalization</h2>
 
-            <h3>Operationalizing Variables for H1 (Example)</h3>
-            <p>Hypothesis 1 focuses on the relationship between network fragmentation (operationalized primarily via changes in density) and resilience (operationalized via funding recovery speed).</p>
+            <h3>Operationalizing Variables (Examples)</h3>
+            <p>Key variables from the hypotheses are operationalized using SNA metrics and ecosystem performance indicators calculated per period (e.g., quarter/year).</p>
 
             <div class="visual-placeholder">
-                <h4>1. Network Density Calculation (Conceptual)</h4>
-                <p>Network density measures the proportion of actual co-investment ties present relative to all possible ties in a given period.</p>
+                <h4>H1: Network Fragmentation (Density) & Recovery Speed</h4>
+                <p>Fragmentation is measured by the change in network density (ΔDensity) during a crisis. Recovery Speed measures time for funding to return to trend.</p>
                 <svg width="200" height="100" viewBox="0 0 200 100">
-                    <rect class="op-bg" x="5" y="5" width="190" height="90" />
-                    <circle class="op-node" cx="40" cy="50" r="8"/>
-                    <circle class="op-node" cx="100" cy="30" r="8"/>
-                    <circle class="op-node" cx="100" cy="70" r="8"/>
-                    <circle class="op-node" cx="160" cy="50" r="8"/>
-                    <line class="op-tie" x1="40" y1="50" x2="100" y2="30" />
-                    <line class="op-tie" x1="40" y1="50" x2="100" y2="70" />
-                    <line class="op-tie" x1="100" y1="30" x2="160" y2="50" />
-                    <line class="op-tie" x1="100" y1="70" x2="160" y2="50" />
-                    <text class="op-label" x="100" y="15" text-anchor="middle">Example Network (4 VCs, 4 Ties)</text>
+                     <rect class="op-bg" x="5" y="5" width="190" height="90" />
+                     <text class="op-title" x="100" y="20" text-anchor="middle">Density & Recovery Viz</text>
+                     <text class="op-label" x="10" y="40">Density Calc:</text>
+                     <text class="op-value" x="15" y="55">Actual/Possible Ties</text>
+                     <text class="op-label" x="10" y="75">Recovery Speed:</text>
+                     <text class="op-value" x="15" y="90">Time (Quarters)</text>
+                     <line class="op-line" x1="100" y1="30" x2="100" y2="90"/>
+                     <text class="op-label" x="110" y="40">ΔDensity:</text>
+                     <text class="op-value" x="115" y="55">Density[Crisis] -</text>
+                     <text class="op-value" x="115" y="65">Density[Pre]</text>
                 </svg>
-                <code>Density = Actual Ties / Potential Ties = 4 / (4 * 3 / 2) = 4 / 6 ≈ 0.67</code>
-                <p>This calculation is performed for each ecosystem-period (e.g., US-Q1-2007).</p>
+                <code>ΔDensity (Crisis) = Density[t_crisis] - Density[t_pre-crisis]</code>
+                <p>Recovery speed measured via time-series analysis of funding volume.</p>
             </div>
 
             <div class="visual-placeholder">
-                <h4>2. Change in Density (ΔDensity) - H1 Variable</h4>
-                <p>This key variable for H1 measures network fragmentation during a crisis.</p>
-                <code>ΔDensity (Crisis) = Density[During Crisis Period] - Density[Pre-Crisis Period]</code>
-                <p>Example: If Density (Pre-Crisis Q4 2007) = 0.15 and Density (Crisis Q2 2008) = 0.10, then ΔDensity = 0.10 - 0.15 = -0.05. A negative value indicates increased fragmentation.</p>
+                <h4>H2: Bridging Capital & Early-Stage Resilience</h4>
+                <p>Bridging capital can be measured using metrics like average node betweenness centrality (how often VCs lie on shortest paths between others) or network constraint. Early-stage resilience can be the % change in early-stage deal volume during the downturn.</p>
+                 <svg width="200" height="100" viewBox="0 0 200 100">
+                     <rect class="op-bg" x="5" y="5" width="190" height="90" />
+                     <text class="op-title" x="100" y="20" text-anchor="middle">Bridging Capital (Betweenness)</text>
+                     <circle class="op-node" cx="30" cy="40" r="6"/> <circle class="op-node" cx="30" cy="70" r="6"/>
+                     <circle class="op-node" cx="100" cy="55" r="8" stroke="var(--accent-color)" stroke-width="2"/> <circle class="op-node" cx="170" cy="40" r="6"/> <circle class="op-node" cx="170" cy="70" r="6"/>
+                     <line class="op-tie" x1="30" y1="40" x2="100" y2="55"/> <line class="op-tie" x1="30" y1="70" x2="100" y2="55"/>
+                     <line class="op-tie" x1="170" y1="40" x2="100" y2="55"/> <line class="op-tie" x1="170" y1="70" x2="100" y2="55"/>
+                     <text class="op-label" x="100" y="85" text-anchor="middle">High Betweenness VC (Bridge)</text>
+                 </svg>
+                <code>EarlyStageResilience = %Δ(Early Stage Deals Volume [Crisis])</code>
+                <p>Higher average betweenness indicates more bridging capital.</p>
             </div>
 
-             <div class="visual-placeholder">
-                <h4>3. Funding Recovery Speed (Conceptual) - H1 Outcome</h4>
-                <p>Measures the time (e.g., in quarters) for an ecosystem's funding volume to return to its pre-crisis trend line after the trough.</p>
-                 <svg width="300" height="100" viewBox="0 0 300 100">
-                     <rect class="op-bg" x="5" y="5" width="290" height="90" />
-                     <text class="op-title" x="150" y="20" text-anchor="middle">Funding Volume Over Time</text>
-                     <line class="op-line" x1="20" y1="40" x2="280" y2="40" stroke-dasharray="4 2" />
-                     <text class="op-label" x="285" y="43">Trend</text>
-                     <polyline points="20,40 80,40 110,70 140,80 170,75 210,40 280,40" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
-                     <text class="op-label" x="285" y="55" fill="var(--accent-color)">Actual</text>
-                     <rect x="100" y="30" width="80" height="60" fill="var(--muted-text-color)" opacity="0.2"/>
-                     <text class="op-value" x="140" y="95" text-anchor="middle">Downturn</text>
-                     <line x1="140" y1="80" x2="210" y2="40" stroke="var(--muted-text-color)" stroke-width="1"/>
-                     <line x1="140" y1="85" x2="210" y2="85" stroke="var(--muted-text-color)" stroke-width="1"/>
-                     <line x1="140" y1="83" x2="140" y2="87" stroke="var(--muted-text-color)" stroke-width="1"/>
-                     <line x1="210" y1="83" x2="210" y2="87" stroke="var(--muted-text-color)" stroke-width="1"/>
-                     <text class="op-value" x="175" y="80" text-anchor="middle">Recovery Time</text>
-                </svg>
-                <p>A shorter time indicates faster recovery and higher resilience in this dimension.</p>
+            <div class="visual-placeholder">
+                <h4>H3: Centralization & Late-Stage Stability</h4>
+                <p>Network centralization can be measured by degree centralization (variance in number of ties) or core density (density among the most connected VCs). Late-stage stability is the deviation from trend in late-stage funding volume.</p>
+                 <svg width="200" height="100" viewBox="0 0 200 100">
+                     <rect class="op-bg" x="5" y="5" width="190" height="90" />
+                     <text class="op-title" x="100" y="20" text-anchor="middle">Centralized Network (Core)</text>
+                     <circle class="op-node" cx="80" cy="55" r="8" stroke="var(--accent-color)" stroke-width="2"/>
+                     <circle class="op-node" cx="120" cy="55" r="8" stroke="var(--accent-color)" stroke-width="2"/>
+                     <circle class="op-node" cx="40" cy="30" r="6"/> <circle class="op-node" cx="40" cy="80" r="6"/>
+                     <circle class="op-node" cx="160" cy="30" r="6"/> <circle class="op-node" cx="160" cy="80" r="6"/>
+                     <line class="op-tie" x1="80" y1="55" x2="120" y2="55"/> <line class="op-tie" x1="40" y1="30" x2="80" y2="55"/> <line class="op-tie" x1="40" y1="80" x2="80" y2="55"/>
+                     <line class="op-tie" x1="160" y1="30" x2="120" y2="55"/> <line class="op-tie" x1="160" y1="80" x2="120" y2="55"/>
+                     <text class="op-label" x="100" y="85" text-anchor="middle">Dense Core, Peripheral Nodes</text>
+                 </svg>
+                 <code>LateStageStability = Deviation(Late Stage Funding Volume [Crisis])</code>
+                 <p>Higher centralization indicates dominance by a few VCs.</p>
             </div>
 
         </section> <section id="analysis">
@@ -353,98 +386,117 @@
 
             <h3>Quantitative Analysis: Regression Modeling</h3>
             <p>
-                Quantitative analysis will utilize panel data regression models to investigate the relationship between VC syndication network structures and ecosystem resilience, particularly during downturns. Resilience indicators (e.g., funding stability, recovery speed) will serve as dependent variables. Key independent variables will include network structure metrics (e.g., density, centrality measures) and their changes during crisis periods, alongside control variables. Interaction terms will be employed specifically to test how network structure moderates the impact of downturns (testing H1-H3).
+                Quantitative analysis will utilize panel data regression models to investigate the relationship between VC syndication network structures and ecosystem resilience. Resilience indicators serve as dependent variables, while network structure metrics and their changes during crisis periods act as independent variables, controlling for other factors. Interaction terms are key to testing how network structure moderates the impact of downturns (H1-H3).
             </p>
             <div class="process-flow">
                 <div class="process-step">
-                    <strong>Model Specification (Illustrative for H1):</strong>
-                    <p>To test H1 (fragmentation impact on recovery), a potential model specification is:</p>
-                    <p><code>RecoverySpeed<sub>e,t</sub> = β<sub>0</sub> + β<sub>1</sub>(ΔDensity<sub>e,crisis</sub>) + β<sub>2</sub>(DownturnSeverity<sub>e,t</sub>) + Controls<sub>e,t</sub> + ε<sub>e,t</sub></code></p>
-                    <p><small>
-                        Where: <br>
-                        <em>RecoverySpeed<sub>e,t</sub></em> = Time for funding in ecosystem 'e' to return to trend after downturn 't'.<br>
-                        <em>ΔDensity<sub>e,crisis</sub></em> = Change in network density for ecosystem 'e' during the crisis period (a measure of fragmentation; negative value indicates decreased density/increased fragmentation).<br>
-                        <em>DownturnSeverity<sub>e,t</sub></em> = Measure of the economic shock's intensity.<br>
-                        <em>Controls<sub>e,t</sub></em> = Vector of control variables (e.g., ecosystem size, industry composition, pre-crisis density).<br>
-                        H1 predicts β<sub>1</sub> > 0 (a larger *decrease* in density, i.e., more negative ΔDensity, leads to slower recovery, meaning a positive coefficient relates higher density change to faster recovery).
-                    </small></p>
+                    <strong>Model Specifications (Illustrative):</strong>
+                    <p>Models will be specified to test each hypothesis, often using interaction terms:</p>
+                    <ul>
+                        <li>
+                            <strong>H1 (Fragmentation & Recovery):</strong>
+                            <code>RecoverySpeed = β<sub>0</sub> + β<sub>1</sub>(ΔDensity<sub>crisis</sub>) + Controls + ε</code>
+                            <small>(Predict β<sub>1</sub> > 0)</small>
+                        </li>
+                        <li>
+                            <strong>H2 (Bridging & Early-Stage):</strong>
+                            <code>EarlyStageResilience = β<sub>0</sub> + β<sub>1</sub>(Downturn) + β<sub>2</sub>(BridgingCapital<sub>pre</sub>) + β<sub>3</sub>(Downturn * BridgingCapital<sub>pre</sub>) + Controls + ε</code>
+                            <small>(Predict β<sub>3</sub> > 0)</small>
+                        </li>
+                        <li>
+                            <strong>H3 (Centralization & Late-Stage):</strong>
+                            <code>LateStageStability = β<sub>0</sub> + β<sub>1</sub>(Centralization<sub>pre</sub>) + β<sub>2</sub>(Downturn * Centralization<sub>pre</sub>) + Controls + ε</code>
+                            <small>(Predict β<sub>1</sub> > 0 or β<sub>2</sub> > 0, depending on interaction framing)</small>
+                        </li>
+                    </ul>
+                     <p><small>Subscripts for ecosystem (e) and time (t) omitted for brevity. 'pre' indicates pre-crisis measure.</small></p>
                 </div>
                 <div class="process-arrow"></div>
 
                 <div class="process-step">
                     <strong>Addressing Endogeneity:</strong>
-                    <p>To address potential endogeneity issues (e.g., reverse causality or omitted variables biasing the estimate of β<sub>1</sub>), the primary strategy is using lagged independent variables. Additionally, instrumental variable (IV) techniques will be explored. Before employing IV, endogeneity of the key variable (ΔDensity) will be formally tested.</p>
+                    <p>Potential endogeneity of network variables will be addressed primarily using lagged independent variables. Instrumental variable (IV) techniques will be explored, preceded by formal endogeneity tests (e.g., Durbin-Wu-Hausman) where appropriate instruments can be theoretically justified and validated.</p>
                     <div class="visual-placeholder">
-                        <h4>Endogeneity Test for ΔDensity (Conceptual Example)</h4>
-                        <p>One common approach is the Durbin-Wu-Hausman test (regression form):</p>
+                        <h4>Endogeneity Test (Conceptual Example for ΔDensity)</h4>
+                        <p>Using Durbin-Wu-Hausman test (regression form):</p>
                         <ul>
-                            <li><strong>Step 1 (First Stage):</strong> Regress the potentially endogenous variable (ΔDensity) on valid instrumental variables (Z) and all exogenous regressors (X) from the main model. A valid instrument (Z) must be correlated with ΔDensity but uncorrelated with the error term (ε) in the RecoverySpeed equation. (Finding valid instruments is a key challenge; e.g., Z could be related to historical regulatory changes affecting syndication propensity but not directly recovery speed).
-                                <code>ΔDensity = γ<sub>0</sub> + γ<sub>1</sub>Z + γ<sub>2</sub>X + u</code>
-                            </li>
-                            <li><strong>Step 2:</strong> Obtain the residuals (û) from the first-stage regression. These residuals represent the portion of ΔDensity not explained by the instruments and exogenous variables.</li>
-                            <li><strong>Step 3 (Test Stage):</strong> Include these residuals (û) in the original RecoverySpeed regression:
-                                <code>RecoverySpeed = β<sub>0</sub> + β<sub>1</sub>ΔDensity + β<sub>2</sub>û + Controls + ε</code>
-                            </li>
-                            <li><strong>Step 4 (Interpretation):</strong> Test the statistical significance of β<sub>2</sub>. If β<sub>2</sub> is significantly different from zero, we reject the null hypothesis that ΔDensity is exogenous.</li>
+                           <li>Regress endogenous variable (ΔDensity) on instruments (Z) and exogenous variables (X).</li>
+                           <li>Obtain residuals (û).</li>
+                           <li>Include residuals (û) in the main structural equation (e.g., for RecoverySpeed).</li>
+                           <li>Test significance of the coefficient on û. Significance suggests endogeneity.</li>
                         </ul>
-                         <code>Mock Test Result: t-statistic for β<sub>2</sub> = 2.58 (p = 0.011)</code>
-                         <p><em>Interpretation: The coefficient on the first-stage residuals (β<sub>2</sub>) is statistically significant (p < 0.05). This suggests that ΔDensity is likely endogenous in the RecoverySpeed model, warranting the use of IV estimation (if valid instruments are available) or cautious interpretation of OLS results.</em></p>
+                         <code>Mock Test Result: Coeff(û) = 0.15, p = 0.02 --> Endogeneity likely.</code>
+                         <p><em>Requires finding valid instruments (correlated with ΔDensity, uncorrelated with RecoverySpeed error).</em></p>
                     </div>
                 </div>
 
                 <div class="process-arrow"></div>
                 <div class="process-step">
-                    <strong>Hypothesis Testing (H1 Focus):</strong>
+                    <strong>Hypothesis Testing (H1, H2, H3):</strong>
                     <p>
-                        Hypothesis 1 posits that greater network fragmentation (decreased density) during downturns hinders ecosystem resilience (slower recovery). Assuming endogeneity is addressed (e.g., via IV), this is tested by examining the sign, magnitude, and statistical significance of the coefficient β<sub>1</sub> on ΔDensity. A statistically significant positive coefficient would support H1.
+                        Each hypothesis will be tested by examining the sign, magnitude, and statistical significance of the relevant coefficients (β's) in the regression models, particularly the main effects and interaction terms related to network structure and downturn periods, after addressing endogeneity concerns.
                     </p>
                     <div class="visual-placeholder">
-                        <h4>Mockup Regression Results (Testing H1: Funding Recovery Speed)</h4>
+                        <h4>Mockup Regression Results (Illustrative Coefficients)</h4>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Variable</th>
+                                    <th>Dependent Variable</th>
+                                    <th>Key Independent Variable</th>
                                     <th>Coefficient (β)</th>
-                                    <th>Std. Error</th>
-                                    <th>Significance</th>
+                                    <th>Hypothesis Supported?</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Intercept (β<sub>0</sub>)</td>
-                                    <td>1.50</td> <td>(0.25)</td>
-                                    <td>***</td>
+                                    <td>Recovery Speed</td>
+                                    <td>Δ Density (Crisis)</td>
+                                    <td>+0.85 ***</td>
+                                    <td>Yes (Less fragmentation -> Faster recovery)</td>
                                 </tr>
                                 <tr>
-                                    <td>Δ Density (During Crisis) (β<sub>1</sub>)</td>
-                                    <td>0.85</td> <td>(0.30)</td>
-                                    <td>***</td>
+                                    <td>Early-Stage Resilience</td>
+                                    <td>Downturn * Bridging Capital (Pre)</td>
+                                    <td>+0.25 **</td>
+                                    <td>Yes (Bridging mitigates downturn impact)</td>
                                 </tr>
                                 <tr>
-                                    <td>Downturn Severity (β<sub>2</sub>)</td>
-                                    <td>0.40</td> <td>(0.15)</td>
-                                    <td>**</td>
-                                </tr>
-                                <tr>
-                                    <td>Control: Pre-Crisis Density</td>
-                                    <td>0.10</td>
-                                    <td>(0.08)</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Control: Ecosystem Size</td>
-                                    <td>-0.05</td> <td>(0.02)</td>
-                                    <td>**</td>
+                                    <td>Late-Stage Stability</td>
+                                    <td>Downturn * Centralization (Pre)</td>
+                                    <td>+0.30 **</td>
+                                    <td>Yes (Centralization beneficial in downturn)</td>
                                 </tr>
                             </tbody>
-                            <tfoot>
+                             <tfoot>
                                 <tr>
-                                    <td colspan="4">Significance levels: *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1. Hypothetical data. Results assume endogeneity addressed.</td>
+                                    <td colspan="4">Significance levels: *** p&lt;0.01, ** p&lt;0.05. Hypothetical coefficients assuming endogeneity addressed. Controls omitted.</td>
                                 </tr>
                             </tfoot>
                         </table>
-                        <p><em>This mock table supports H1: The significant positive coefficient for Δ Density suggests that ecosystems experiencing less fragmentation (smaller decrease or increase in density) during a crisis recover funding levels significantly faster.</em></p>
+                        <p><em>Table shows hypothetical significant coefficients supporting H1, H2, and H3.</em></p>
                     </div>
+                     <div class="visual-placeholder">
+                         <h4>Mockup Interaction Plots (Conceptual)</h4>
+                         <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                             <svg width="250" height="180" viewBox="0 0 250 180" style="margin: 5px;">
+                                 <rect class="plot-bg" x="5" y="5" width="240" height="170" />
+                                 <text class="plot-title" x="125" y="20" text-anchor="middle">H2: Bridging & Early-Stage</text>
+                                 <line class="axis-line" x1="30" y1="150" x2="220" y2="150" /> <text class="tick-label" x="30" y="165" text-anchor="middle">Normal</text> <text class="tick-label" x="220" y="165" text-anchor="middle">Downturn</text>
+                                 <line class="axis-line" x1="30" y1="30" x2="30" y2="150" /> <text class="tick-label" x="25" y="150" text-anchor="end">Low</text> <text class="tick-label" x="25" y="40" text-anchor="end">High</text> <text class="axis-label" x="15" y="90" transform="rotate(-90 15,90)" text-anchor="middle">Early Stage Activity</text>
+                                 <line x1="50" y1="60" x2="200" y2="120" stroke="var(--accent-color)" stroke-width="2"/> <text class="op-value" x="205" y="115" fill="var(--accent-color)">High Bridging</text>
+                                 <line x1="50" y1="50" x2="200" y2="140" stroke="var(--muted-text-color)" stroke-width="2" stroke-dasharray="4 2"/> <text class="op-value" x="205" y="145" fill="var(--muted-text-color)">Low Bridging</text>
+                             </svg>
+                             <svg width="250" height="180" viewBox="0 0 250 180" style="margin: 5px;">
+                                 <rect class="plot-bg" x="5" y="5" width="240" height="170" />
+                                 <text class="plot-title" x="125" y="20" text-anchor="middle">H3: Centralization & Late-Stage</text>
+                                 <line class="axis-line" x1="30" y1="150" x2="220" y2="150" /> <text class="tick-label" x="30" y="165" text-anchor="middle">Normal</text> <text class="tick-label" x="220" y="165" text-anchor="middle">Downturn</text>
+                                 <line class="axis-line" x1="30" y1="30" x2="30" y2="150" /> <text class="tick-label" x="25" y="150" text-anchor="end">Low</text> <text class="tick-label" x="25" y="40" text-anchor="end">High</text> <text class="axis-label" x="15" y="90" transform="rotate(-90 15,90)" text-anchor="middle">Late Stage Stability</text>
+                                 <line x1="50" y1="60" x2="200" y2="80" stroke="var(--accent-color)" stroke-width="2"/> <text class="op-value" x="205" y="75" fill="var(--accent-color)">High Centraliz.</text>
+                                 <line x1="50" y1="70" x2="200" y2="130" stroke="var(--muted-text-color)" stroke-width="2" stroke-dasharray="4 2"/> <text class="op-value" x="205" y="135" fill="var(--muted-text-color)">Low Centraliz.</text>
+                             </svg>
+                         </div>
+                         <p><em>Conceptual plots showing how high bridging capital (H2) or high centralization (H3) might mitigate the negative impact of downturns compared to low levels.</em></p>
+                     </div>
                 </div>
             </div> <h3>Qualitative Analysis: Thematic Analysis & Triangulation</h3>
             <p>
@@ -453,58 +505,43 @@
             <div class="process-flow">
                 <div class="process-step">
                     <strong>Step 1: Coding Qualitative Data</strong>
-                    <p>Transcripts and notes will be coded thematically, focusing on experiences related to network changes during crises, syndication behavior shifts, information flow, resource access, and perceived impacts on portfolio companies and overall ecosystem function.</p>
+                    <p>Transcripts and notes will be coded thematically, focusing on experiences related to network changes during crises, syndication behavior shifts, information flow, resource access, and perceived impacts on portfolio companies and overall ecosystem function, relevant to H1, H2, and H3.</p>
                 </div>
                 <div class="process-arrow"></div>
                 <div class="process-step">
-                    <strong>Step 2: Identifying Mechanisms (H1 Focus)</strong>
-                    <p>Analysis will specifically seek to understand *why* fragmentation might hinder recovery (supporting H1). Themes explored may include reduced access to diverse information, difficulties in coordinating support for startups, breakdown of trust in wider networks, increased search costs for partners, or flight to 'safer' core partners, potentially stranding peripheral actors.</p>
+                    <strong>Step 2: Identifying Mechanisms</strong>
+                    <p>Analysis will seek to understand the mechanisms behind quantitative findings. Why does fragmentation hinder recovery (H1)? How does bridging capital aid early-stage firms in crises (H2)? How does centralization support late-stage stability (H3)? Themes may include information access, coordination, trust, resource mobilization, and strategic adaptation differences based on network position and structure.</p>
                 </div>
                 <div class="process-arrow"></div>
                 <div class="process-step">
                     <strong>Step 3: Triangulation</strong>
-                    <p>Qualitative insights regarding the consequences of network fragmentation (or stability) will be compared with the quantitative results (e.g., the significance of β<sub>1</sub> in the H1 model). Congruence between findings will strengthen the interpretation, while divergence may highlight contextual factors or alternative explanations requiring further investigation.</p>
+                    <p>Qualitative insights will be compared with quantitative results for H1, H2, and H3. Congruence strengthens interpretations (e.g., VCs describing how their bridging ties helped find scarce early-stage follow-on funding aligns with H2 quantitative results). Divergence prompts exploration of context or alternative explanations.</p>
                     <div class="visual-placeholder">
                         <h4>Mockup Scatter Plot (Illustrating H1)</h4>
                         <svg width="350" height="250" viewBox="0 0 350 250">
                             <rect class="plot-bg" x="40" y="20" width="290" height="180" />
-
-                            <circle class="data-point" cx="60" cy="70" r="4" />
-                            <circle class="data-point" cx="80" cy="60" r="4" />
-                            <circle class="data-point" cx="100" cy="90" r="4" />
-                            <circle class="data-point" cx="120" cy="80" r="4" />
-                            <circle class="data-point" cx="150" cy="130" r="4" />
-                            <circle class="data-point" cx="180" cy="120" r="4" />
-                            <circle class="data-point" cx="200" cy="150" r="4" />
-                            <circle class="data-point" cx="220" cy="140" r="4" />
-                            <circle class="data-point" cx="250" cy="180" r="4" />
-                            <circle class="data-point" cx="280" cy="170" r="4" />
-                            <circle class="data-point" cx="300" cy="190" r="4" />
-                            <circle class="data-point" cx="320" cy="180" r="4" />
-
-                            <line class="axis-line" x1="40" y1="200" x2="330" y2="200" /> <line class="axis-line" x1="40" y1="20" x2="40" y2="200" /> <text class="axis-label" x="185" y="230" text-anchor="middle">Network Fragmentation during Crisis (e.g., Decrease in Density)</text>
-                            <text class="tick-label" x="40" y="215" text-anchor="middle">Low Frag.</text>
-                            <text class="tick-label" x="330" y="215" text-anchor="middle">High Frag.</text>
-
-                            <text class="axis-label" x="15" y="110" text-anchor="middle" transform="rotate(-90 15,110)">Funding Recovery Speed</text>
-                            <text class="tick-label" x="35" y="200" text-anchor="end">Slow</text>
-                            <text class="tick-label" x="35" y="30" text-anchor="end">Fast</text>
-
+                            <circle class="data-point" cx="60" cy="70" r="4" /> <circle class="data-point" cx="80" cy="60" r="4" /> <circle class="data-point" cx="100" cy="90" r="4" /> <circle class="data-point" cx="120" cy="80" r="4" /> <circle class="data-point" cx="150" cy="130" r="4" /> <circle class="data-point" cx="180" cy="120" r="4" /> <circle class="data-point" cx="200" cy="150" r="4" /> <circle class="data-point" cx="220" cy="140" r="4" /> <circle class="data-point" cx="250" cy="180" r="4" /> <circle class="data-point" cx="280" cy="170" r="4" /> <circle class="data-point" cx="300" cy="190" r="4" /> <circle class="data-point" cx="320" cy="180" r="4" />
+                            <line class="axis-line" x1="40" y1="200" x2="330" y2="200" /> <line class="axis-line" x1="40" y1="20" x2="40" y2="200" /> <text class="axis-label" x="185" y="230" text-anchor="middle">Network Fragmentation during Crisis (e.g., Decrease in Density)</text> <text class="tick-label" x="40" y="215" text-anchor="middle">Low Frag.</text> <text class="tick-label" x="330" y="215" text-anchor="middle">High Frag.</text>
+                            <text class="axis-label" x="15" y="110" text-anchor="middle" transform="rotate(-90 15,110)">Funding Recovery Speed</text> <text class="tick-label" x="35" y="200" text-anchor="end">Slow</text> <text class="tick-label" x="35" y="30" text-anchor="end">Fast</text>
                             <text class="plot-title" x="185" y="15" text-anchor="middle">H1: Fragmentation & Recovery</text>
                         </svg>
-                        <p><em>Illustrative plot supporting H1: Ecosystems experiencing greater network fragmentation (larger decrease in density) during a crisis tend to exhibit slower funding recovery speeds.</em></p>
+                        <p><em>Illustrative plot supporting H1. Similar plots would be generated for H2 and H3 relationships.</em></p>
                     </div>
                 </div>
             </div> </section> <section id="conclusion">
             <h2>Conceptual Conclusion</h2>
             <p>
-                Based on the illustrative findings presented in the mock-ups, this research conceptually highlights a potentially significant link between the structural integrity of VC syndication networks and the resilience of the broader innovation ecosystem, particularly when facing economic downturns.
+                Based on the illustrative findings for Hypotheses 1, 2, and 3, this research conceptually highlights potentially significant links between VC network dynamics and ecosystem resilience during economic downturns.
             </p>
             <p>
-                Specifically, the mock results focused on Hypothesis 1 suggest that increased network fragmentation (evidenced by a decrease in co-investment density) during a crisis period correlates with slower funding recovery speeds for the ecosystem. Triangulation with potential qualitative insights could further suggest that this relationship stems from factors like disrupted information flow, reduced risk-sharing capacity, and difficulties in coordinating support within more fragmented networks.
+                The mock results suggest that: (H1) network fragmentation may hinder recovery speed; (H2) pre-crisis bridging social capital might buffer early-stage funding from the worst downturn effects; and (H3) network centralization around experienced actors could support late-stage funding stability. Triangulation with qualitative data is crucial to understand the mechanisms driving these potential relationships (e.g., information flow, coordination, trust, resource access).
             </p>
             <p>
-                While these findings are conceptual at this stage, they underscore the critical importance of network structure—not just firm-level attributes—in determining how well a VC ecosystem can withstand and bounce back from shocks. Understanding these dynamics could offer valuable insights for VCs seeking strategic partnerships, startups navigating fundraising challenges, LPs assessing risk, and policymakers aiming to foster more robust and adaptive innovation environments capable of weathering economic turbulence. Further empirical investigation as outlined is necessary to validate these conceptual relationships.
+                While conceptual, these potential findings underscore the importance of network structure in determining ecosystem resilience. Understanding these dynamics offers valuable insights for VCs, startups, LPs, and policymakers aiming to foster more robust innovation environments capable of weathering economic turbulence. Further empirical investigation is necessary to validate these relationships.
             </p>
-        </section> </div> </body>
+        </section> <p class="disclaimer">
+            Disclaimer: All tables, figures, and numerical examples presented are illustrative mock-ups designed to demonstrate the proposed methodology for Hypotheses 1, 2, and 3, and do not represent actual research data or findings.
+        </p>
+
+    </div> </body>
 </html>
