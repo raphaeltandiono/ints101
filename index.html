@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Procedure, Analysis & Conclusion - H1-H3 Focus</title>
+    <title>Research Concepts, Procedure, Analysis & Conclusion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,9 +22,9 @@
         /* Basic body styling */
         body {
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6; /* Slightly reduced line-height */
+            line-height: 1.6;
             margin: 0;
-            padding: 20px; /* Reduced body padding */
+            padding: 20px;
             background-color: var(--bg-color);
             color: var(--text-color);
             font-weight: 400;
@@ -34,7 +34,7 @@
         .author-info {
             font-size: 0.8em;
             color: var(--muted-text-color);
-            margin-bottom: 15px; /* Reduced space below author info */
+            margin-bottom: 15px;
             padding-left: 10px;
         }
 
@@ -43,7 +43,7 @@
             max-width: 900px;
             margin: auto;
             background: var(--bg-color);
-            padding: 25px 35px; /* Reduced container padding */
+            padding: 25px 35px;
             border-radius: 10px;
             border: 1px solid var(--accent-color);
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -51,41 +51,46 @@
 
         /* Section styling */
         section {
-            padding: 15px 0; /* Reduced section padding */
-            margin-bottom: 20px; /* Reduced space between sections */
-            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 20px;
         }
-        section:last-child {
+         /* Add border below sections for separation */
+        section:not(:last-child) {
+             border-bottom: 1px solid var(--border-color);
+        }
+         /* Remove bottom border from the very last section inside container */
+         .container > section:last-of-type {
             margin-bottom: 0;
             border-bottom: none;
-        }
+         }
+
 
         /* Headings */
         h2 {
             text-align: center;
             color: var(--text-color);
             font-weight: 600;
-            margin-bottom: 30px; /* Reduced space below H2 */
+            margin-bottom: 30px;
             letter-spacing: 0.5px;
         }
         h3 {
             color: var(--accent-color);
             font-weight: 600;
-            margin-top: 30px; /* Reduced space above H3 */
-            margin-bottom: 15px; /* Reduced space below H3 */
+            margin-top: 30px;
+            margin-bottom: 15px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
         }
          h4 {
             color: var(--accent-color);
             font-weight: 500;
-            margin-top: 20px; /* Reduced space */
-            margin-bottom: 10px; /* Reduced space */
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
 
         /* Content paragraph styling */
         p {
-            margin-bottom: 15px; /* Reduced space */
+            margin-bottom: 15px;
             color: #343a40;
         }
         p small {
@@ -93,11 +98,11 @@
              font-size: 0.9em;
         }
         ul {
-            margin-bottom: 15px; /* Reduced space */
+            margin-bottom: 15px;
             padding-left: 25px;
         }
         li {
-            margin-bottom: 6px; /* Reduced space */
+            margin-bottom: 6px;
         }
 
         /* Code block styling */
@@ -105,12 +110,12 @@
             font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
             background-color: var(--secondary-bg);
             color: #212529;
-            padding: 8px 12px; /* Reduced padding */
+            padding: 8px 12px;
             border-radius: 6px;
             font-size: 0.85em;
             display: block;
             text-align: left;
-            margin: 10px 0; /* Reduced margin */
+            margin: 10px 0;
             overflow-x: auto;
             border: 1px solid var(--border-color);
         }
@@ -130,10 +135,10 @@
         }
         .process-step {
             background: transparent;
-            padding: 12px 12px 12px 15px; /* Reduced padding */
+            padding: 12px 12px 12px 15px;
             border-left: 3px solid var(--accent-color);
             border-radius: 0;
-            margin-bottom: 10px; /* Reduced space */
+            margin-bottom: 10px;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             border-right: 1px solid var(--border-color);
@@ -144,36 +149,67 @@
         }
         .process-arrow {
              text-align: center;
-             margin: -5px 0 10px 0; /* Adjusted margin */
+             margin: -5px 0 10px 0;
              line-height: 1;
              color: var(--accent-color);
-             font-size: 18px; /* Slightly smaller arrow */
+             font-size: 18px;
              font-weight: bold;
          }
          .process-arrow::after {
              content: '↓';
          }
 
-        /* Visual placeholder styling */
+        /* Visual placeholder styling (Shared) */
         .visual-placeholder {
             border: 1px dashed var(--accent-color);
-            padding: 15px; /* Reduced padding */
-            margin: 20px 0; /* Reduced margin */
+            padding: 15px;
+            margin: 20px 0;
             background-color: var(--secondary-bg);
             border-radius: 8px;
             text-align: center;
         }
-         .visual-placeholder h4 {
+         .visual-placeholder h4 { /* Title inside placeholder */
+             width: 100%;
              margin-top: 0;
+             margin-bottom: 15px;
              text-align: center;
          }
-        .visual-placeholder p {
+        .visual-placeholder p { /* Text inside placeholder */
             font-style: normal;
             color: var(--muted-text-color);
-            font-size: 0.85em; /* Slightly smaller text */
-            margin-top: 10px;
+            font-size: 0.85em;
+            margin-top: 10px; /* Adjusted margin */
             text-align: left;
         }
+         /* Specific styles for concept illustrations placeholder */
+         .concept-placeholder {
+             display: flex;
+             justify-content: space-around;
+             align-items: center;
+             flex-wrap: wrap;
+             gap: 20px;
+         }
+         .viz-item { /* Container for each SVG and its label in concepts */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 10px; /* Add space above viz items */
+         }
+          .viz-item svg { /* SVG inside concept placeholder */
+             background-color: #fff;
+             border-radius: 4px;
+             padding: 5px;
+             box-sizing: border-box;
+             border: 1px solid var(--border-color);
+             margin-bottom: 5px;
+         }
+         .viz-item .op-label { /* Label below concept SVG */
+             font-size: 10px;
+             font-weight: 500;
+             color: var(--muted-text-color);
+         }
+         /* Styles for placeholders in procedure/analysis */
          .visual-placeholder code {
              text-align: left;
              margin-top: 8px;
@@ -191,20 +227,19 @@
              padding: 5px;
              box-sizing: border-box;
          }
-         /* Flex container for interaction plots */
          .plot-container {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 10px; /* Add gap between plots */
+            gap: 10px;
          }
 
         /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0; /* Reduced margin */
-            font-size: 0.85em; /* Slightly smaller table font */
+            margin: 15px 0;
+            font-size: 0.85em;
             border: 1px solid var(--border-color);
             border-radius: 6px;
             overflow: hidden;
@@ -212,7 +247,7 @@
         th, td {
             border: none;
             border-bottom: 1px solid var(--border-color);
-            padding: 10px 12px; /* Reduced padding */
+            padding: 10px 12px;
             text-align: left;
             vertical-align: middle;
             color: var(--text-color);
@@ -238,17 +273,17 @@
             font-size: 0.85em;
             color: var(--muted-text-color);
             text-align: center;
-            padding: 8px; /* Reduced padding */
+            padding: 8px;
         }
         td:last-child {
              font-weight: bold;
         }
 
 
-        /* SVG styling */
+        /* SVG styling (Shared) */
         svg {
             display: block;
-            margin: 10px auto; /* Reduced margin */
+            margin: 10px auto;
             max-width: 100%;
             height: auto;
         }
@@ -262,16 +297,16 @@
             fill: var(--text-color);
         }
         svg text.axis-label, svg text.op-label {
-            font-size: 10px; /* Smaller */
+            font-size: 10px;
             fill: var(--muted-text-color);
             font-weight: 500;
         }
          svg text.tick-label, svg text.op-value {
-            font-size: 8px; /* Smaller */
+            font-size: 8px;
             fill: var(--muted-text-color);
         }
         svg text.plot-title, svg text.op-title {
-            font-size: 12px; /* Smaller */
+            font-size: 12px;
             font-weight: 600;
             fill: var(--accent-color);
         }
@@ -285,11 +320,35 @@
             stroke: var(--bg-color);
             stroke-width: 0.5px;
         }
+        /* Specific SVG styles from concepts viz */
+         svg circle.op-node-highlight {
+             fill: #ffc107; /* Example highlight color */
+             stroke: var(--accent-color);
+             stroke-width: 1.5px;
+         }
         svg line.op-tie {
              stroke: var(--accent-color);
              stroke-width: 1.5px;
              opacity: 0.6;
         }
+         svg line.op-tie-weak {
+             stroke: var(--muted-text-color);
+             stroke-width: 1px;
+             stroke-dasharray: 3 3;
+             opacity: 0.7;
+        }
+         svg line.op-tie-strong {
+             stroke: var(--accent-color);
+             stroke-width: 2.5px;
+             opacity: 0.8;
+        }
+         svg ellipse.structural-hole {
+             fill: none;
+             stroke: var(--muted-text-color);
+             stroke-width: 1px;
+             stroke-dasharray: 4 4;
+             opacity: 0.5;
+         }
          svg path.op-path {
              stroke: var(--accent-color);
              stroke-width: 2px;
@@ -299,12 +358,12 @@
 
         /* Disclaimer Styling */
         .disclaimer {
-            font-size: 0.75em; /* Smaller */
+            font-size: 0.75em;
             color: var(--muted-text-color);
             text-align: center;
-            margin-top: 30px; /* Reduced space */
+            margin-top: 30px;
             border-top: 1px solid var(--border-color);
-            padding-top: 15px; /* Reduced space */
+            padding-top: 15px;
         }
 
     </style>
@@ -315,7 +374,117 @@
 
     <div class="container">
 
-        <section id="procedure">
+        <section id="network-concepts">
+            <h2>Illustrating Network Characteristics</h2>
+
+            <section id="density">
+                <h3>Network Density</h3>
+                <p>Density refers to the proportion of actual connections (ties) between actors (nodes) compared to the total possible connections. Higher density indicates a more tightly knit network.</p>
+                <div class="visual-placeholder concept-placeholder">
+                    <div class="viz-item">
+                        <svg width="150" height="100" viewBox="0 0 150 100">
+                            <rect class="op-bg" x="5" y="5" width="140" height="90" />
+                            <circle class="op-node" cx="30" cy="30" r="7"/> <circle class="op-node" cx="30" cy="70" r="7"/>
+                            <circle class="op-node" cx="75" cy="50" r="7"/>
+                            <circle class="op-node" cx="120" cy="30" r="7"/> <circle class="op-node" cx="120" cy="70" r="7"/>
+                            <line class="op-tie" x1="30" y1="30" x2="75" y2="50"/>
+                            <line class="op-tie" x1="75" y1="50" x2="120" y2="70"/>
+                        </svg>
+                        <span class="op-label">Low Density Network</span>
+                    </div>
+                    <div class="viz-item">
+                        <svg width="150" height="100" viewBox="0 0 150 100">
+                            <rect class="op-bg" x="5" y="5" width="140" height="90" />
+                            <circle class="op-node" cx="30" cy="30" r="7"/> <circle class="op-node" cx="30" cy="70" r="7"/>
+                            <circle class="op-node" cx="75" cy="50" r="7"/>
+                            <circle class="op-node" cx="120" cy="30" r="7"/> <circle class="op-node" cx="120" cy="70" r="7"/>
+                            <line class="op-tie" x1="30" y1="30" x2="75" y2="50"/> <line class="op-tie" x1="30" y1="70" x2="75" y2="50"/>
+                            <line class="op-tie" x1="120" y1="30" x2="75" y2="50"/> <line class="op-tie" x1="120" y1="70" x2="75" y2="50"/>
+                            <line class="op-tie" x1="30" y1="30" x2="120" y2="30"/> <line class="op-tie" x1="30" y1="70" x2="120" y2="70"/>
+                            <line class="op-tie" x1="30" y1="30" x2="30" y2="70"/> <line class="op-tie" x1="120" y1="30" x2="120" y2="70"/>
+                        </svg>
+                         <span class="op-label">High Density Network</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="centralization">
+                <h3>Network Centralization</h3>
+                <p>Centralization describes the extent to which network ties are concentrated around one or a few central nodes. High centralization means a few actors dominate connections.</p>
+                 <div class="visual-placeholder concept-placeholder">
+                     <div class="viz-item">
+                        <svg width="150" height="100" viewBox="0 0 150 100">
+                            <rect class="op-bg" x="5" y="5" width="140" height="90" />
+                            <circle class="op-node" cx="30" cy="30" r="7"/> <circle class="op-node" cx="30" cy="70" r="7"/>
+                            <circle class="op-node" cx="120" cy="30" r="7"/> <circle class="op-node" cx="120" cy="70" r="7"/>
+                             <circle class="op-node" cx="75" cy="50" r="7"/>
+                            <line class="op-tie" x1="30" y1="30" x2="75" y2="50"/> <line class="op-tie" x1="30" y1="70" x2="75" y2="50"/>
+                            <line class="op-tie" x1="120" y1="30" x2="75" y2="50"/> <line class="op-tie" x1="120" y1="70" x2="75" y2="50"/>
+                             <line class="op-tie" x1="30" y1="30" x2="30" y2="70"/> <line class="op-tie" x1="120" y1="30" x2="120" y2="70"/>
+                        </svg>
+                         <span class="op-label">Decentralized Network</span>
+                     </div>
+                     <div class="viz-item">
+                         <svg width="150" height="100" viewBox="0 0 150 100">
+                            <rect class="op-bg" x="5" y="5" width="140" height="90" />
+                            <circle class="op-node" cx="30" cy="30" r="7"/> <circle class="op-node" cx="30" cy="70" r="7"/>
+                            <circle class="op-node" cx="120" cy="30" r="7"/> <circle class="op-node" cx="120" cy="70" r="7"/>
+                            <circle class="op-node op-node-highlight" cx="75" cy="50" r="9"/>
+                            <line class="op-tie" x1="30" y1="30" x2="75" y2="50"/> <line class="op-tie" x1="30" y1="70" x2="75" y2="50"/>
+                            <line class="op-tie" x1="120" y1="30" x2="75" y2="50"/> <line class="op-tie" x1="120" y1="70" x2="75" y2="50"/>
+                        </svg>
+                         <span class="op-label">Centralized Network (Star)</span>
+                     </div>
+                </div>
+            </section>
+
+            <section id="tie-strength">
+                <h3>Tie Strength</h3>
+                <p>Tie strength reflects the intensity, frequency, or closeness of a relationship between two nodes. Strong ties often indicate trust and rich information flow, while weak ties can bridge different groups.</p>
+                <div class="visual-placeholder concept-placeholder">
+                     <div class="viz-item">
+                         <svg width="150" height="100" viewBox="0 0 150 100">
+                            <rect class="op-bg" x="5" y="5" width="140" height="90" />
+                            <circle class="op-node" cx="40" cy="50" r="8"/>
+                            <circle class="op-node" cx="110" cy="50" r="8"/>
+                            <line class="op-tie-weak" x1="40" y1="50" x2="110" y2="50"/>
+                        </svg>
+                         <span class="op-label">Weak Tie (e.g., infrequent contact)</span>
+                     </div>
+                     <div class="viz-item">
+                         <svg width="150" height="100" viewBox="0 0 150 100">
+                            <rect class="op-bg" x="5" y="5" width="140" height="90" />
+                            <circle class="op-node" cx="40" cy="50" r="8"/>
+                            <circle class="op-node" cx="110" cy="50" r="8"/>
+                            <line class="op-tie-strong" x1="40" y1="50" x2="110" y2="50"/>
+                        </svg>
+                         <span class="op-label">Strong Tie (e.g., frequent co-investment)</span>
+                     </div>
+                </div>
+            </section>
+
+            <section id="structural-holes">
+                <h3>Structural Holes</h3>
+                <p>Structural holes are gaps in the network structure between disconnected groups or individuals. Nodes that bridge these holes (brokers) can access diverse information and control resource flow.</p>
+                 <div class="visual-placeholder concept-placeholder"> <div class="viz-item">
+                         <svg width="200" height="120" viewBox="0 0 200 120">
+                            <rect class="op-bg" x="5" y="5" width="190" height="110" />
+                            <circle class="op-node" cx="40" cy="35" r="7"/> <circle class="op-node" cx="25" cy="65" r="7"/> <circle class="op-node" cx="55" cy="65" r="7"/>
+                            <line class="op-tie" x1="40" y1="35" x2="25" y2="65"/> <line class="op-tie" x1="40" y1="35" x2="55" y2="65"/> <line class="op-tie" x1="25" y1="65" x2="55" y2="65"/>
+                            <circle class="op-node" cx="160" cy="35" r="7"/> <circle class="op-node" cx="145" cy="65" r="7"/> <circle class="op-node" cx="175" cy="65" r="7"/>
+                             <line class="op-tie" x1="160" y1="35" x2="145" y2="65"/> <line class="op-tie" x1="160" y1="35" x2="175" y2="65"/> <line class="op-tie" x1="145" y1="65" x2="175" y2="65"/>
+                            <circle class="op-node op-node-highlight" cx="100" cy="80" r="9"/>
+                            <line class="op-tie" x1="55" y1="65" x2="100" y2="80"/>
+                            <line class="op-tie" x1="145" y1="65" x2="100" y2="80"/>
+                            <ellipse class="structural-hole" cx="100" cy="50" rx="50" ry="25"/>
+                             <text class="op-label" x="100" y="55" text-anchor="middle">Structural Hole</text>
+                             <text class="op-label" x="100" y="105" text-anchor="middle">Broker Node</text>
+                        </svg>
+                         <span class="op-label">Node Bridging a Structural Hole</span>
+                     </div>
+                </div>
+            </section>
+        </section> <section id="procedure">
             <h2>Procedure & Operationalization</h2>
 
             <h3>Operationalizing Variables (Examples)</h3>
@@ -331,9 +500,11 @@
                      <text class="op-value" x="20" y="55" text-anchor="start">Actual/Possible Ties</text>
                      <text class="op-label" x="15" y="75" text-anchor="start">Recovery Speed:</text>
                      <text class="op-value" x="20" y="90" text-anchor="start">Time (Quarters)</text>
-                     <line class="op-line" x1="105" y1="30" x2="105" y2="100"/> <text class="op-label" x="115" y="40" text-anchor="start">ΔDensity:</text>
+                     <line class="op-line" x1="105" y1="30" x2="105" y2="100"/>
+                     <text class="op-label" x="115" y="40" text-anchor="start">ΔDensity:</text>
                      <text class="op-value" x="120" y="55" text-anchor="start">Density[Crisis] -</text>
-                     <text class="op-value" x="120" y="68" text-anchor="start">Density[Pre]</text> </svg>
+                     <text class="op-value" x="120" y="68" text-anchor="start">Density[Pre]</text>
+                </svg>
                 <code>ΔDensity (Crisis) = Density[t_crisis] - Density[t_pre-crisis]</code>
                 <p>Recovery speed measured via time-series analysis of funding volume.</p>
             </div>
@@ -345,11 +516,11 @@
                      <rect class="op-bg" x="5" y="5" width="190" height="100" />
                      <text class="op-title" x="100" y="20" text-anchor="middle">Bridging Capital (Betweenness)</text>
                      <circle class="op-node" cx="30" cy="45" r="6"/> <circle class="op-node" cx="30" cy="75" r="6"/>
-                     <circle class="op-node" cx="100" cy="60" r="8" stroke="var(--accent-color)" stroke-width="2"/>
-                     <circle class="op-node" cx="170" cy="45" r="6"/> <circle class="op-node" cx="170" cy="75" r="6"/>
+                     <circle class="op-node op-node-highlight" cx="100" cy="60" r="8"/> <circle class="op-node" cx="170" cy="45" r="6"/> <circle class="op-node" cx="170" cy="75" r="6"/>
                      <line class="op-tie" x1="30" y1="45" x2="100" y2="60"/> <line class="op-tie" x1="30" y1="75" x2="100" y2="60"/>
                      <line class="op-tie" x1="170" y1="45" x2="100" y2="60"/> <line class="op-tie" x1="170" y1="75" x2="100" y2="60"/>
-                     <text class="op-label" x="100" y="95" text-anchor="middle">High Betweenness VC (Bridge)</text> </svg>
+                     <text class="op-label" x="100" y="95" text-anchor="middle">High Betweenness VC (Bridge)</text>
+                 </svg>
                 <code>EarlyStageResilience = %Δ(Early Stage Deals Volume [Crisis])</code>
                 <p>Higher average betweenness indicates more bridging capital.</p>
             </div>
@@ -360,14 +531,12 @@
                  <svg width="200" height="110" viewBox="0 0 200 110">
                      <rect class="op-bg" x="5" y="5" width="190" height="100" />
                      <text class="op-title" x="100" y="20" text-anchor="middle">Centralized Network (Core)</text>
-                     <circle class="op-node" cx="80" cy="60" r="8" stroke="var(--accent-color)" stroke-width="2"/>
-                     <circle class="op-node" cx="120" cy="60" r="8" stroke="var(--accent-color)" stroke-width="2"/>
-                     <circle class="op-node" cx="40" cy="35" r="6"/> <circle class="op-node" cx="40" cy="85" r="6"/>
+                     <circle class="op-node op-node-highlight" cx="80" cy="60" r="8"/> <circle class="op-node op-node-highlight" cx="120" cy="60" r="8"/> <circle class="op-node" cx="40" cy="35" r="6"/> <circle class="op-node" cx="40" cy="85" r="6"/>
                      <circle class="op-node" cx="160" cy="35" r="6"/> <circle class="op-node" cx="160" cy="85" r="6"/>
-                     <line class="op-tie" x1="80" y1="60" x2="120" y2="60"/>
-                     <line class="op-tie" x1="40" y1="35" x2="80" y2="60"/> <line class="op-tie" x1="40" y1="85" x2="80" y2="60"/>
+                     <line class="op-tie-strong" x1="80" y1="60" x2="120" y2="60"/> <line class="op-tie" x1="40" y1="35" x2="80" y2="60"/> <line class="op-tie" x1="40" y1="85" x2="80" y2="60"/>
                      <line class="op-tie" x1="160" y1="35" x2="120" y2="60"/> <line class="op-tie" x1="160" y1="85" x2="120" y2="60"/>
-                     <text class="op-label" x="100" y="95" text-anchor="middle">Dense Core, Peripheral Nodes</text> </svg>
+                     <text class="op-label" x="100" y="95" text-anchor="middle">Dense Core, Peripheral Nodes</text>
+                 </svg>
                  <code>LateStageStability = Deviation(Late Stage Funding Volume [Crisis])</code>
                  <p>Higher centralization indicates dominance by a few VCs.</p>
             </div>
